@@ -2,11 +2,13 @@ package com.jz.controller;
 
 import com.jz.entity.AutoGeneInfoEntity;
 import com.jz.service.AutoGeneInfoServiceI;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(tags = "自动生成代码示例")
 @RestController
 @RequestMapping("/autoGeneInfo")
 public class AutoGeneInfoController {

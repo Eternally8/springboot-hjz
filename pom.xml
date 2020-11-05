@@ -21,7 +21,7 @@
 
         <mybatis-generator-maven-plugin-v>1.4.0</mybatis-generator-maven-plugin-v>
 
-        <knife4j-v>2.0.5</knife4j-v>
+        <knife4j-v>3.0.1</knife4j-v>
 
         <xxl-job-v>2.2.0</xxl-job-v>
         <apollo-v>1.5.1</apollo-v>

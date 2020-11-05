@@ -4,12 +4,14 @@ import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -41,7 +43,7 @@ public class SwaggerConfig{
 //        //添加head参数(role)  end
 
         return new Docket(DocumentationType.SWAGGER_2)
-//             .groupName("defalut1")  默认模块的名称不需要写,不然会报错
+             .groupName("defalut1")  //默认模块的名称不需要写,不然会报错
              .enable(swaggerShow)
                 //增加全局的请求参数
 //             .globalOperationParameters(pars)
@@ -50,15 +52,15 @@ public class SwaggerConfig{
               //选产那些路经和api会生成document
              .select()
               // 可以自行修改为自已的包路经(下面的可以增加多个包路径)
-//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))  //只是扫描带注解的
-             .apis(basePackage("com.jz.controller"
-                + splitor + "com.jz.rabbitmq"
-                + splitor + "com.jz.elasticSearch"
-                + splitor + "com.jz.bigData"
-                + splitor + "com.jz.kafka"))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))  //只是扫描带注解的
+//             .apis(basePackage("com.jz.controller"
+//                + splitor + "com.jz.rabbitmq"
+//                + splitor + "com.jz.elasticSearch"
+//                + splitor + "com.jz.bigData"
+//                + splitor + "com.jz.kafka"))
 //             .apis(RequestHandlerSelectors.any())  //对所有api进行监控
               // 不显示错误的接口地址
-             .paths(Predicates.not(PathSelectors.regex("/error.*"))) //错误路径不监控
+//             .paths(Predicates.not(PathSelectors.regex("/error.*"))) //错误路径不监控
              .paths(PathSelectors.regex("/.*"))  //对根下所有路径进行监控
              .build();
     }
@@ -93,10 +95,10 @@ public class SwaggerConfig{
                 //选产那些路经和api会生成document
                 .select()
                 // 可以自行修改为自已的包路经(下面的可以增加多个包路径)
-//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))  //只扫描带注解的
-                .apis(basePackage("com.jz.controller"))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))  //只扫描带注解的
+//                .apis(basePackage("com.jz.controller"))
                 // 不显示错误的接口地址
-                .paths(Predicates.not(PathSelectors.regex("/error.*"))) //错误路径不监控
+//                .paths(Predicates.not(PathSelectors.regex("/error.*"))) //错误路径不监控
                 .paths(PathSelectors.regex("/.*"))  //对根下所有路径进行监控
                 .build();
     }

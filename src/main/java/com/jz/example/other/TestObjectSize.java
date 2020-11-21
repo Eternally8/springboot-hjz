@@ -13,15 +13,31 @@ import java.util.HashMap;
 public class TestObjectSize {
 
     public static void main(String[] args) {
-        System.out.println(RamUsageEstimator.sizeOf(1));
-        System.out.println(RamUsageEstimator.sizeOf(true));
-        System.out.println(RamUsageEstimator.sizeOf(1L));
-        System.out.println(RamUsageEstimator.sizeOf(1f));
-        System.out.println(RamUsageEstimator.sizeOf(1.0));
-        System.out.println(RamUsageEstimator.sizeOf(new int[]{}));
-        System.out.println(RamUsageEstimator.sizeOf(new ArrayList()));
-        System.out.println(RamUsageEstimator.sizeOf(new HashMap()));
+        System.out.println(RamUsageEstimator.humanSizeOf(1));
+        System.out.println(RamUsageEstimator.humanSizeOf(true));
+        System.out.println(RamUsageEstimator.humanSizeOf(1L));
+        System.out.println(RamUsageEstimator.humanSizeOf(1f));
+        System.out.println(RamUsageEstimator.humanSizeOf(1.0));
+        System.out.println(RamUsageEstimator.humanSizeOf(new int[]{}));
+        System.out.println(RamUsageEstimator.humanSizeOf(new ArrayList()));
+        System.out.println(RamUsageEstimator.humanSizeOf(new HashMap()));
+        System.out.println(RamUsageEstimator.humanSizeOf(new ObjectA()));
+        System.out.println(RamUsageEstimator.humanSizeOf(new ObjectA()));
     }
 
+
+    private static class ObjectA {
+        String str;   // 4
+        int i1;       // 4
+        byte b1;      // 1
+        byte b2;      // 1
+        int i2;       // 4
+        ObjectB obj;  //4
+        byte b3;      // 1
+    }
+
+    private static class ObjectB {
+
+    }
 
 }

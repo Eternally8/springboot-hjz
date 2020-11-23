@@ -12,6 +12,7 @@ import java.util.HashMap;
  */
 public class TestObjectSize {
 
+    //所以所有基本类型封装对象所占内存的大小都是16字节.
     public static void main(String[] args) {
         System.out.println(RamUsageEstimator.humanSizeOf(1));
         System.out.println(RamUsageEstimator.humanSizeOf(true));

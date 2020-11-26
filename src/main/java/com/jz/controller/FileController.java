@@ -1,12 +1,17 @@
 package com.jz.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import cn.hutool.core.io.FileUtil;
+import com.jz.utils.reqResult.ResponseEntityDto;
+import com.jz.utils.reqResult.UnifiedReply;
+import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedWriter;
@@ -25,7 +30,45 @@ import java.util.List;
 @Api(tags = "文件处理")
 @Controller
 @RequestMapping("/file")
-public class FileController {
+public class FileController extends UnifiedReply {
+
+    @ApiOperation(value = "上传文件", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping
+    public ResponseEntityDto<?> createPackage(@ApiParam("文件名") @RequestParam("fileName") String fileName,
+                                              @ApiParam("文件描述") @RequestParam("fileDesc") String fileDesc,
+                                              @ApiParam(name = "file") @RequestPart("file") MultipartFile file) {
+        // 处理上传逻辑
+        log.info("文件大小为:{}",file.getSize());
+        return buildSuccesResp(file.getSize());
+    }
+
+
+    @ApiOperation(value = "下载cvs文件",notes = "根据id下载")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id",value="id",required = true)
+    })
+    @GetMapping("/downLoadColdData")
+    public ResponseEntity<?> downLoadColdData(String id){
+        log.info("下载cvs文件:{}",id);
+        String path = "/root/temp/" + id + ".csv";
+
+        //根据路径 api返回文件
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        headers.add("Pragma", "no-cache");
+        headers.add("Expires", "0");
+        headers.add("Content-Disposition", "attachment; filename=" + FileUtil.newFile(path).getName());
+        headers.add("filename", FileUtil.newFile(path).getName());
+
+        InputStreamResource resource = new InputStreamResource(FileUtil.getInputStream(path));
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .contentLength(FileUtil.file(path).length())
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .body(resource);
+    }
+
 
     //通过Id下载文件信息记录
     @ApiOperation(value = "通过Id下载文件信息记录")

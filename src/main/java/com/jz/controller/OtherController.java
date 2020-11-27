@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Slf4j
 @Api(tags = "其他方法测试")
@@ -20,6 +22,15 @@ public class OtherController {
     @ApiOperation(value = "测试注解异步线程执行")
     @GetMapping("test")
     public String test() {
+        /**
+         * 设置子线程共享一个
+         *  @Autowired
+         *  private HttpServletRequest req;
+         */
+
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        RequestContextHolder.setRequestAttributes(servletRequestAttributes,true);
+
         for (int i=0;i<10;i++) {
             Thread t = new Thread();
             t.run();

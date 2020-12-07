@@ -1,9 +1,8 @@
 package com.jz.service;
 
+import com.jz.utils.Contants;
 import com.jz.utils.OtherUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class OtherService {
         return otherUtils.getTime();
     }
 
-    @Async(value = "taskExecutor")
+    @Async(Contants.MY_EXECUTOR)
     public void getThreadName() {
         System.out.println("asdfasdfasd1111111" + Thread.currentThread().getName());
     }

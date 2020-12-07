@@ -1,5 +1,6 @@
 package com.jz.utils;
 
+import cn.hutool.core.date.SystemClock;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
@@ -42,7 +43,7 @@ public class OtherUtils {
 
     public String getTime() {
         if(t.get() == null){
-            t.set(System.currentTimeMillis() + "#" + Thread.currentThread().getName());
+            t.set(SystemClock.now() + "#" + Thread.currentThread().getName());
         }
         return t.get();
     }

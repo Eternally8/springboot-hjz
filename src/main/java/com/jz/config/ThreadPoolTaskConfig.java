@@ -1,5 +1,6 @@
 package com.jz.config;
 
+import com.jz.utils.Contants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -19,11 +20,11 @@ public class ThreadPoolTaskConfig {
     //缓冲队列数量
     private static final int queueCapacity = 200;
     //线程池名称的前缀
-    private static final String threadNamePrefix = "Async-Service-";
+    private static final String threadNamePrefix = "AsyncService-";
 
 
     //bean的名称,制认为首字母小写的方法名
-    @Bean("taskExecutor")
+    @Bean(Contants.MY_EXECUTOR)
     public ThreadPoolTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutorPlus executor = new ThreadPoolTaskExecutorPlus();
         executor.setCorePoolSize(corePoolSize);

@@ -1,4 +1,4 @@
-package com.jz.example;
+package com.jz.example.realization;
 
 import java.util.LinkedHashMap;
 
@@ -11,7 +11,6 @@ public class LRU {
 
     public LRU(int capacity){
         cache = new LinkedHashMap<Integer,Integer>(capacity,0.75f,true){
-
             //在LinkedHashMap添加元素后，会调用removeEldestEntry防范，传递的参数时最久没有被访问的键值对，如果方法返回true
             @Override
             protected boolean removeEldestEntry(java.util.Map.Entry<Integer, Integer> eldest) {

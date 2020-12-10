@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d1f4e7f1-28f5-41fd-a5bd-c23451cc7e66" name="Default Changelist" comment="删除配置">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-yun.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/jz/utils/mapstruct/CarMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$USER_HOME$/maven/repository" />
+        <option name="mavenHome" value="$USER_HOME$/maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="$USER_HOME$/maven/apache-maven-3.6.3/conf/settings-self.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jJXjxjVKiJt8FsnoalMatJFBgY" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.5630175" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://127.0.0.1:28081/springBootDemo/otherController/test" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:28081/SpringBootDemo/otherController/test" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:28081/otherController/test" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="LRUCache" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jz.example.realization.LRUCache" />
+      <module name="springBootDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jz.example.realization.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jz.example.multiThread.lock.TestLock" />
+      <module name="springBootDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jz.example.multiThread.lock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestObjectSize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jz.example.other.TestObjectSize" />
+      <module name="springBootDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jz.example.other.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="腾讯云" type="Remote">
+      <module name="springBootDemo" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="212.64.18.166" />
+      <option name="PORT" value="5555" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5555" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="springBootDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jz.Application" />
+      <option name="VM_PARAMETERS" value="-Dapollo.configService=http://212.64.18.166:8080" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.LRUCache" />
+      <item itemvalue="Application.TestLock" />
+      <item itemvalue="Application.TestObjectSize" />
+      <item itemvalue="Remote JVM Debug.腾讯云" />
+      <item itemvalue="Spring Boot.Application" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1f4e7f1-28f5-41fd-a5bd-c23451cc7e66" name="Default Changelist" comment="" />
+      <created>1603523307181</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603523307181</updated>
+      <workItem from="1603523308238" duration="2748000" />
+      <workItem from="1603527005641" duration="151000" />
+      <workItem from="1603527160782" duration="9027000" />
+      <workItem from="1603677647609" duration="398000" />
+      <workItem from="1603682915337" duration="63000" />
+      <workItem from="1603767404399" duration="1669000" />
+      <workItem from="1603769097459" duration="6000" />
+      <workItem from="1603781455614" duration="418000" />
+      <workItem from="1603781934950" duration="719000" />
+      <workItem from="1603851979383" duration="79000" />
+      <workItem from="1604300480504" duration="942000" />
+      <workItem from="1604301438588" duration="596000" />
+      <workItem from="1604303435106" duration="504000" />
+      <workItem from="1604372729845" duration="2439000" />
+      <workItem from="1604390365723" duration="2549000" />
+      <workItem from="1604477914365" duration="882000" />
+      <workItem from="1604544314906" duration="243000" />
+      <workItem from="1604544561866" duration="1147000" />
+      <workItem from="1604545733698" duration="2593000" />
+      <workItem from="1605006341217" duration="45000" />
+      <workItem from="1605007612954" duration="680000" />
+      <workItem from="1605181241848" duration="1805000" />
+      <workItem from="1605929220951" duration="665000" />
+      <workItem from="1605948292746" duration="876000" />
+      <workItem from="1606104002907" duration="1028000" />
+      <workItem from="1606384433782" duration="1328000" />
+      <workItem from="1606477313560" duration="161000" />
+      <workItem from="1607340530519" duration="2351000" />
+      <workItem from="1607513413531" duration="539000" />
+      <workItem from="1607513966132" duration="68000" />
+      <workItem from="1607514047873" duration="1337000" />
+      <workItem from="1607570434098" duration="3165000" />
+      <workItem from="1607578416628" duration="116000" />
+    </task>
+    <task id="LOCAL-00001" summary="修改依赖2">
+      <created>1603527740137</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603527740137</updated>
+    </task>
+    <task id="LOCAL-00002" summary="基础mybatis的注解sql使用">
+      <created>1603541100731</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603541100732</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改依赖2">
+      <created>1603542929544</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603542929544</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改apollo">
+      <created>1603768032006</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603768032006</updated>
+    </task>
+    <task id="LOCAL-00005" summary="公开">
+      <created>1604388932911</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604388932911</updated>
+    </task>
+    <task id="LOCAL-00006" summary="删除配置">
+      <created>1604478149080</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604478149080</updated>
+    </task>
+    <task id="LOCAL-00007" summary="升级swagger">
+      <created>1604547035720</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604547035720</updated>
+    </task>
+    <task id="LOCAL-00008" summary="增加获取对象大小的方法">
+      <created>1605948740571</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605948740571</updated>
+    </task>
+    <task id="LOCAL-00009" summary="删除配置">
+      <created>1605949113705</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605949113705</updated>
+    </task>
+    <task id="LOCAL-00010" summary="增加注解">
+      <created>1606111652374</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606111652374</updated>
+    </task>
+    <task id="LOCAL-00011" summary="增加文件上传下载的新方法">
+      <created>1606388874424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606388874424</updated>
+    </task>
+    <task id="LOCAL-00012" summary="增加子线程共享req">
+      <created>1606477452451</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606477452451</updated>
+    </task>
+    <task id="LOCAL-00013" summary="增加异步线程池命名">
+      <created>1607342936785</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607342936785</updated>
+    </task>
+    <task id="LOCAL-00014" summary="增加一个锁示例">
+      <created>1607567014516</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1607567014516</updated>
+    </task>
+    <task id="LOCAL-00015" summary="增加LRU实现">
+      <created>1607572379795</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1607572379795</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="基础mybatis的注解sql使用" />
+    <MESSAGE value="修改依赖2" />
+    <MESSAGE value="修改apollo" />
+    <MESSAGE value="公开" />
+    <MESSAGE value="升级swagger" />
+    <MESSAGE value="增加获取对象大小的方法" />
+    <MESSAGE value="删除配置" />
+    <MESSAGE value="增加注解" />
+    <MESSAGE value="增加文件上传下载的新方法" />
+    <MESSAGE value="增加子线程共享req" />
+    <MESSAGE value="增加异步线程池命名" />
+    <MESSAGE value="增加一个锁示例" />
+    <MESSAGE value="增加LRU实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加LRU实现" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

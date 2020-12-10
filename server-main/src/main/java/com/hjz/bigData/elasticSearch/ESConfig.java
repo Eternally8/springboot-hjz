@@ -39,6 +39,7 @@ public class ESConfig {
     @Value("${elasticsearch.keystorePath}")
     private String eskeystorePath;
 
+
     @Bean(name = "ESClient")
     public RestHighLevelClient getClient() throws Exception {
         //elastic_url是以逗号分隔的地址ip+port

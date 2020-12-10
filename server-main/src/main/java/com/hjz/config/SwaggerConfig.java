@@ -20,8 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig{
-    @Value("${swagger_show}")
-    private boolean swaggerShow;
+    @Value("${swaggerSwitch}")
+    private boolean swaggerSwitch;
 
     @Value("${server.servlet.context-path}")
     private String projectName;
@@ -43,7 +43,7 @@ public class SwaggerConfig{
 
         return new Docket(DocumentationType.SWAGGER_2)
              .groupName("defalut1")  //默认模块的名称不需要写,不然会报错
-             .enable(swaggerShow)
+             .enable(swaggerSwitch)
                 //增加全局的请求参数
 //             .globalOperationParameters(pars)
              .apiInfo(apiInfo())
@@ -88,7 +88,7 @@ public class SwaggerConfig{
     public Docket newApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("newModule")
-                .enable(swaggerShow)
+                .enable(swaggerSwitch)
                 .apiInfo(newApiInfo())
                 .pathMapping("/")
                 //选产那些路经和api会生成document

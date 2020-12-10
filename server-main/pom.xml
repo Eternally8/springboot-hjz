@@ -107,6 +107,12 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <scope>true</scope>
+        </dependency>
+
         <!--spring boot对spring aop的支持组件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -118,6 +124,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
+
+        <!-- Eureka服务端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+
 
         <!--####################数据库连接配置mybatis########################-->
         <!--mysql 连接驱动链接-->
@@ -257,11 +272,11 @@
             <version>${jruby-complete-v}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-            <version>${spring-kafka-v}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.kafka</groupId>-->
+<!--            <artifactId>spring-kafka</artifactId>-->
+<!--            <version>${spring-kafka-v}</version>-->
+<!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.carrotsearch/java-sizeof -->
         <dependency>

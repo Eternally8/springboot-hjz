@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/springcloud")
 public class CloudController {
-
 //    @Autowired
 //    private Server2FeignClient server2FeignClient;
     @Autowired
     private Server2FeignClient2 server2FeignClient2;
+
 
     @ApiOperation(value = "feign测试",notes = "发送一个请求")
     @GetMapping(value = "/feignTest")
@@ -29,11 +29,11 @@ public class CloudController {
         vo.setName("lalalala");
         vo.setId(1);
 
-//        StudentVo result = server2FeignClient.getData(vo);
-
+//        StudentVo result = server2FeignClient.getData(vo); //直接调用全路径的url
         StudentVo result2 = server2FeignClient2.getData(vo);
 
         return result2;
     }
+
 
 }

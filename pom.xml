@@ -13,8 +13,7 @@
         <module>server2</module>
         <module>server-main</module>
         <module>eureka</module>
-        <module>nacos-provider</module>
-        <module>nacos-consumer</module>
+        <module>springCloudAlibaba</module>
     </modules>
 
     <!--SpringBoot的父依赖启动 -->

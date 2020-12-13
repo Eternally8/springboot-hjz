@@ -9,7 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-provider</artifactId>
+    <artifactId>springCloudAlibaba</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>nacos-provider</module>
+        <module>nacos-consumer</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 
     <dependencies>

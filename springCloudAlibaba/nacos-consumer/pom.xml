@@ -26,6 +26,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <!-- true标识不传递依赖 其他项目引用本项目,则不会有这个依赖-->
             <scope>true</scope>
         </dependency>
 

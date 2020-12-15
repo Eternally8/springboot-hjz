@@ -23,11 +23,12 @@ public class ProviderController {
     @ApiOperation(value = "提供对外服务",notes = "测试提供对外服务")
     @PostMapping(value = "/myHandle")
     public StudentVo myHandle(@RequestBody StudentVo studentVo){
-        log.info("np获取了参数:{}", JSON.toJSONString(studentVo));
-
-        studentVo.setName(serverPort);
-        studentVo.setAge(studentVo.getAge() + 1);
-        return studentVo;
+        throw new RuntimeException("模拟服务调用失败");
+//        log.info("np获取了参数:{}", JSON.toJSONString(studentVo));
+//
+//        studentVo.setName(serverPort);
+//        studentVo.setAge(studentVo.getAge() + 1);
+//        return studentVo;
     }
 
 

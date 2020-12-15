@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@Api(tags = "nacosProvider提供接口")
+@Api(tags = "nacosProvider2提供接口")
 @RestController
 @RequestMapping("/nprovider")
 public class ProviderController {
@@ -20,13 +20,13 @@ public class ProviderController {
     @Value("${server.port}")
     private String serverPort;
 
-    @ApiOperation(value = "提供对外服务",notes = "测试提供对外服务")
+    @ApiOperation(value = "提供对外服务2",notes = "测试提供对外服务2")
     @PostMapping(value = "/myHandle")
     public StudentVo myHandle(@RequestBody StudentVo studentVo){
-        log.info("np获取了参数:{}", JSON.toJSONString(studentVo));
+        log.info("np2获取了参数:{}", JSON.toJSONString(studentVo));
 
-        studentVo.setName(serverPort);
-        studentVo.setAge(studentVo.getAge() + 1);
+        studentVo.setName("provider2:" + serverPort);
+        studentVo.setAge(studentVo.getAge() + 2);
         return studentVo;
     }
 

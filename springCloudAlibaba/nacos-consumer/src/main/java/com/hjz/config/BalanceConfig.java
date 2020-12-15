@@ -15,15 +15,15 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 public class BalanceConfig {
-    /**
-     * 默认按顺序轮询
-     * @return
-     */
-    @Bean
-    @LoadBalanced
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
+//    /**
+//     * 默认按顺序轮询
+//     * @return
+//     */
+//    @Bean
+//    @LoadBalanced
+//    public RestTemplate getRestTemplate() {
+//        return new RestTemplate();
+//    }
 
 
     /*
@@ -43,7 +43,7 @@ public class BalanceConfig {
         // return new RetryRule();//重试
         // return new BestAvailableRule();
         // return new WeightedResponseTimeRule();// 权重
-        return new RandomRule();
+        return new NacosWeightRandomV2Rule();  //自定义权重比例
     }
 
 

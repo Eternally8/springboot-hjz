@@ -31,7 +31,6 @@
         <jruby-complete-v>9.2.8.0</jruby-complete-v>
 
         <spring-kafka-v>2.4.1.RELEASE</spring-kafka-v>
-
         <docker-maven-plugin-v>1.2.0</docker-maven-plugin-v>
     </properties>
 

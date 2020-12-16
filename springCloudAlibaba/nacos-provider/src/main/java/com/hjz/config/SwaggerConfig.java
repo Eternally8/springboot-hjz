@@ -17,8 +17,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Value("${server.servlet.context-path}")
-    private String projectName;
+//    @Value("${server.servlet.context-path}")
+//    private String projectName;
 
     //---------------------------------默认的指定空间--------------------------------------------
     @Bean
@@ -37,7 +37,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
                 //标题
-                .title(projectName.split("/")[1] +"接口文档")
+//                .title(projectName.split("/")[1] +"接口文档")
                 //描述
                 .description("lalala")
                 .version("1.0.0")

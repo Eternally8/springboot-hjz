@@ -52,8 +52,15 @@ public class SentinelController {
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
         //定义QPS每秒通过的请求数
         rule.setCount(1);
+
+        FlowRule rule2 = new FlowRule();
+        rule2.setResource("getStu2");
+        rule2.setGrade(RuleConstant.FLOW_GRADE_QPS);
+        rule2.setCount(1);
+
         //3.将限流规则存放到集合中
         rules.add(rule);
+        rules.add(rule2);
         //4.加载限流规则
         FlowRuleManager.loadRules(rules);
     }

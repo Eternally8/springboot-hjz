@@ -23,7 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * https://cloud.tencent.com/developer/article/1460975
  */
 @Slf4j
-public class NacosWeightRandomV2Rule extends AbstractLoadBalancerRule {
+public class NacosWeightRandomRule extends AbstractLoadBalancerRule {
     @Autowired
     private NacosDiscoveryProperties nacosDiscoveryProperties;
     @Autowired

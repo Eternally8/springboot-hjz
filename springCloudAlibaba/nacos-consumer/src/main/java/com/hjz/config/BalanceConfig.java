@@ -1,12 +1,8 @@
 package com.hjz.config;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
-import com.netflix.loadbalancer.RoundRobinRule;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Description： TODO
@@ -43,7 +39,7 @@ public class BalanceConfig {
         // return new RetryRule();//重试
         // return new BestAvailableRule();
         // return new WeightedResponseTimeRule();// 权重
-        return new NacosWeightRandomV2Rule();  //自定义权重比例
+        return new NacosWeightRandomRule();  //自定义权重比例
     }
 
 

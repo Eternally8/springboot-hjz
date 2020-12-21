@@ -47,94 +47,104 @@
         </dependencies>
     </dependencyManagement>
 
-<!--    <properties>-->
-<!--        <knife4j-v>3.0.2</knife4j-v>-->
-<!--        <lombok-v>1.18.10</lombok-v>-->
-<!--        <fastjson-v>1.2.58</fastjson-v>-->
-<!--        <gson-v>2.8.5</gson-v>-->
-<!--        <guava-v>27.1-jre</guava-v>-->
+    <properties>
+        <knife4j-v>3.0.2</knife4j-v>
+        <lombok-v>1.18.10</lombok-v>
+        <fastjson-v>1.2.58</fastjson-v>
+        <gson-v>2.8.5</gson-v>
+        <guava-v>27.1-jre</guava-v>
 
-<!--        <junit-v>4.13.1</junit-v>-->
-<!--        <commons-lang3-v>3.9</commons-lang3-v>-->
-<!--        <hutool-v>5.4.7</hutool-v>-->
-<!--        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>-->
-<!--        <java-sizeof-v>0.0.5</java-sizeof-v>-->
-<!--    </properties>-->
+        <junit-v>4.13.1</junit-v>
+        <commons-lang3-v>3.9</commons-lang3-v>
+        <hutool-v>5.4.7</hutool-v>
+        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
+        <java-sizeof-v>0.0.5</java-sizeof-v>
 
-<!--    <dependencies>-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.xiaoymin</groupId>-->
-<!--            <artifactId>knife4j-spring-boot-starter</artifactId>-->
-<!--            <version>${knife4j-v}</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <artifactId>mapstruct</artifactId>-->
-<!--                    <groupId>org.mapstruct</groupId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
+        <!-- 这个jar比较奇怪不加会导致sentinel-springCloud启动失败-->
+        <hibernate-validator.version>6.0.18.Final</hibernate-validator.version>
+    </properties>
 
-<!--        <dependency>-->
-<!--            <groupId>org.projectlombok</groupId>-->
-<!--            <artifactId>lombok</artifactId>-->
-<!--            <version>${lombok-v}</version>-->
-<!--        </dependency>-->
+    <dependencies>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>${knife4j-v}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mapstruct</artifactId>
+                    <groupId>org.mapstruct</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-<!--        &lt;!&ndash;fastjson&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba</groupId>-->
-<!--            <artifactId>fastjson</artifactId>-->
-<!--            <version>${fastjson-v}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-v}</version>
+        </dependency>
 
-<!--        &lt;!&ndash;guava&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.guava</groupId>-->
-<!--            <artifactId>guava</artifactId>-->
-<!--            <version>${guava-v}</version>-->
-<!--        </dependency>-->
+        <!--fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson-v}</version>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>cn.hutool</groupId>-->
-<!--            <artifactId>hutool-all</artifactId>-->
-<!--            <version>${hutool-v}</version>-->
-<!--        </dependency>-->
+        <!--guava-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava-v}</version>
+        </dependency>
 
-<!--        &lt;!&ndash; mapstruct &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.mapstruct</groupId>-->
-<!--            <artifactId>mapstruct</artifactId>-->
-<!--            <version>${org.mapstruct.version}</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.mapstruct</groupId>-->
-<!--            <artifactId>mapstruct-processor</artifactId>-->
-<!--            <version>${org.mapstruct.version}</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool-v}</version>
+        </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.carrotsearch/java-sizeof &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.carrotsearch</groupId>-->
-<!--            <artifactId>java-sizeof</artifactId>-->
-<!--            <version>${java-sizeof-v}</version>-->
-<!--        </dependency>-->
+        <!-- mapstruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+            <scope>compile</scope>
+        </dependency>
 
-<!--        &lt;!&ndash; 为了编码方便，并非apollo 必须的依赖 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.commons</groupId>-->
-<!--            <artifactId>commons-lang3</artifactId>-->
-<!--            <version>${commons-lang3-v}</version>-->
-<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.carrotsearch/java-sizeof -->
+        <dependency>
+            <groupId>com.carrotsearch</groupId>
+            <artifactId>java-sizeof</artifactId>
+            <version>${java-sizeof-v}</version>
+        </dependency>
 
-<!--        &lt;!&ndash;junit&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>junit</groupId>-->
-<!--            <artifactId>junit</artifactId>-->
-<!--            <version>${junit-v}</version>-->
-<!--        </dependency>-->
-<!--    </dependencies>-->
+        <!-- 为了编码方便，并非apollo 必须的依赖 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3-v}</version>
+        </dependency>
+
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-v}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
+    </dependencies>
 
 
 </project>

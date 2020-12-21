@@ -17,7 +17,6 @@
         <module>nacos-provider2</module>
         <module>nacos-consumer</module>
         <module>nacos-gateway</module>
-        <module>sentinelDemo</module>
     </modules>
 
     <properties>

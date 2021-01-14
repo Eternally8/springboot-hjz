@@ -1,5 +1,6 @@
 package com.hjz.controller;
 
+import com.hjz.model.ParamVaildReqVo;
 import com.hjz.utils.reqResult.ResponseEntityDto;
 import com.hjz.utils.reqResult.UnifiedReply;
 import io.swagger.annotations.*;
@@ -45,17 +46,21 @@ public class SwaggerController extends UnifiedReply {
     }
 
 
+    @ApiOperation(value = "hello3")
+    @PostMapping("/hello3")
+    public String hello3(@RequestBody ParamVaildReqVo reqVo) {
+        return "1";
+    }
 
-    @ApiOperation(value = "上传文件", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+
+    @ApiOperation(value = "hello4", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PostMapping
-    public ResponseEntityDto<?> createPackage(@ApiParam("文件名") @RequestParam("fileName") String fileName,
-                                              @ApiParam("文件描述") @RequestParam("fileDesc") String fileDesc,
-                                              @ApiParam(name = "file") @RequestPart("file") MultipartFile file) {
+    public ResponseEntityDto<?> hello4(@ApiParam("文件名") @RequestParam String fileName,
+                                              @ApiParam("文件描述") @RequestParam String fileDesc,
+                                              @ApiParam("文件") @RequestPart("file") MultipartFile file) {
         // 处理上传逻辑
         log.info("文件大小为:{}",file.getSize());
         return buildSuccesResp(file.getSize());
     }
-
-
 
 }

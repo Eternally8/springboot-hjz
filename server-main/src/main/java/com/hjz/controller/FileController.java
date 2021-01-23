@@ -1,6 +1,8 @@
 package com.hjz.controller;
 
 import cn.hutool.core.io.FileUtil;
+import com.alibaba.excel.EasyExcel;
+import com.hjz.model.DownloadData;
 import com.hjz.utils.reqResult.ResponseEntityDto;
 import com.hjz.utils.reqResult.UnifiedReply;
 import io.swagger.annotations.*;
@@ -18,8 +20,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Description： TODO
@@ -92,6 +93,27 @@ public class FileController extends UnifiedReply {
         createCSVFile(datalist,resp);
     }
 
+
+
+    @ApiOperation(value = "下载xls",notes = "依赖alibaba-easyexcel")
+    @PostMapping("/downLogInfoMj")
+    public void downLogInfoMj(HttpServletResponse resp) throws IOException {
+        String fileName = URLEncoder.encode("测试", "UTF-8").replaceAll("\\+", "%20");
+
+        resp.setContentType("application/vnd.ms-excel");
+        resp.setCharacterEncoding("utf-8");
+        resp.setHeader("Content-disposition", "attachment;filename*=utf-8''" + fileName + ".xlsx");
+
+        EasyExcel.write(resp.getOutputStream(), DownloadData.class).sheet("模板").doWrite(data());
+    }
+
+    private List<String> data() {
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i < 10; i++) {
+            list.add(i+"");
+        }
+        return list;
+    }
 
     public static void createCSVFile(List<List<Object>> dataList, HttpServletResponse response) {
         BufferedWriter csvWtriter = null;

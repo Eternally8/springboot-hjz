@@ -187,6 +187,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-openapi</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.jruby</groupId>
             <artifactId>jruby-complete</artifactId>
             <version>${jruby-complete-v}</version>

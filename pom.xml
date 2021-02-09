@@ -12,8 +12,8 @@
     <modules>
         <module>server2</module>
         <module>server-main</module>
-        <module>eureka</module>
         <module>springCloudAlibaba</module>
+        <module>springCloud</module>
     </modules>
 
     <!--SpringBoot的父依赖启动 -->

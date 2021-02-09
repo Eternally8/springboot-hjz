@@ -18,9 +18,9 @@ public class ConsumerController {
     @Autowired
     private NacosProviderFeignClient nacosProviderFeignClient;
 
-    @ApiOperation(value = "调用消费",notes = "通过feign调用nacos-provider接口")
+    @ApiOperation(value = "调用消费", notes = "通过feign调用nacos-provider接口")
     @GetMapping(value = "/nconsumerTest")
-    public StudentVo nconsumerTest(){
+    public StudentVo nconsumerTest() {
         StudentVo vo = new StudentVo();
         vo.setAge(1);
         vo.setName("lalalala");

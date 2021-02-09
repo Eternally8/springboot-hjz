@@ -40,7 +40,7 @@ public class NacosWeightRandomRule extends AbstractLoadBalancerRule {
             NamingService namingService = nacosServiceManager.getNamingService(nacosDiscoveryProperties.getNacosProperties());
             Instance instance = namingService.selectOneHealthyInstance(applicationName);
 //            Instance instance2 = nacosDiscoveryProperties.namingServiceInstance().selectOneHealthyInstance(applicationName);
-            log.info("获取的服务示例为:{}",instance.getPort());
+            log.info("获取的服务示例为:{}", instance.getPort());
             return new NacosServer(instance);
         } catch (NacosException e) {
             log.error("获取服务实例异常：{}", e.getMessage());

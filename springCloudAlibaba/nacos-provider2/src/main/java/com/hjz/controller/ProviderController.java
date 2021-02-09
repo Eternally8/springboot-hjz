@@ -17,9 +17,9 @@ public class ProviderController {
     @Value("${server.port}")
     private String serverPort;
 
-    @ApiOperation(value = "提供对外服务2",notes = "测试提供对外服务2")
+    @ApiOperation(value = "提供对外服务2", notes = "测试提供对外服务2")
     @PostMapping(value = "/myHandle")
-    public StudentVo myHandle(@RequestBody StudentVo studentVo){
+    public StudentVo myHandle(@RequestBody StudentVo studentVo) {
         log.info("np2获取了参数:{}", JSON.toJSONString(studentVo));
 
         studentVo.setName("provider2:" + serverPort);
@@ -27,9 +27,9 @@ public class ProviderController {
         return studentVo;
     }
 
-    @ApiOperation(value = "网关调用",notes = "网关调用服务")
+    @ApiOperation(value = "网关调用", notes = "网关调用服务")
     @GetMapping(value = "/gateWayGetData")
-    public StudentVo gateWayGetData(){
+    public StudentVo gateWayGetData() {
         log.info("nacos-provider2网关调用！！！！！");
         StudentVo studentVo = new StudentVo();
         studentVo.setName("服务网关路由到我了");

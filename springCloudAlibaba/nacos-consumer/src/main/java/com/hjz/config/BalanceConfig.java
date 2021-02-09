@@ -34,7 +34,7 @@ public class BalanceConfig {
         ZoneAvoidanceRule 符合判断server所在区域的性能和server的可用性选择服
      */
     @Bean
-    public IRule myRule(){
+    public IRule myRule() {
 //         return new RoundRobinRule();//轮询
         // return new RetryRule();//重试
         // return new BestAvailableRule();

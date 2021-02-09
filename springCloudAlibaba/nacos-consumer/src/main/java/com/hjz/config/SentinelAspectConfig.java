@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class SentinelAspectConfig {
 
     @Bean
-    public SentinelResourceAspect sentinelResourceAspect(){
+    public SentinelResourceAspect sentinelResourceAspect() {
         return new SentinelResourceAspect();
     }
 }

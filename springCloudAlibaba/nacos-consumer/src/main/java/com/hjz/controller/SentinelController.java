@@ -27,8 +27,8 @@ public class SentinelController {
 
     @ApiOperation(value = "原始方式使用限流")
     @GetMapping("/hello")
-    public String hello(){
-        try(Entry entry = SphU.entry("Hello")) {
+    public String hello() {
+        try (Entry entry = SphU.entry("Hello")) {
             return "Hello Sentinel";
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,12 +36,14 @@ public class SentinelController {
         return "系统繁忙，请稍后";
     }
 
-    /** 定义限流规则
+    /**
+     * 定义限流规则
+     *
      * @PostConstruct 此注解的含义是：本类构造方法执行结束后执行
      */
 
     @PostConstruct
-    public void init(){
+    public void init() {
         //1.创建存放限流规则的集合
         List<FlowRule> rules = new ArrayList<>();
         //2.创建限流规则
@@ -67,9 +69,9 @@ public class SentinelController {
 
 
     @ApiOperation(value = "注解使用限流")
-    @SentinelResource(value = "getStu",blockHandler = "blockHandlerForGetUser")
+    @SentinelResource(value = "getStu", blockHandler = "blockHandlerForGetUser")
     @GetMapping(value = "/getStu")
-    public StudentVo getStu(){
+    public StudentVo getStu() {
         log.info("调用获取资源");
         StudentVo vo = new StudentVo();
         vo.setAge(1);
@@ -90,14 +92,14 @@ public class SentinelController {
 
 
     @ApiOperation(value = "springCloud使用限流")
-    @SentinelResource(value = "getStu2",blockHandler = "getStu2ExceptionHandler")
+    @SentinelResource(value = "getStu2", blockHandler = "getStu2ExceptionHandler")
     @GetMapping(value = "/getStu2")
-    public String getStu2(){
+    public String getStu2() {
         return "lalalalala";
     }
 
 
-    public String getStu2ExceptionHandler(BlockException e){
+    public String getStu2ExceptionHandler(BlockException e) {
         e.printStackTrace();
         return "系统繁忙请稍后再试";
     }

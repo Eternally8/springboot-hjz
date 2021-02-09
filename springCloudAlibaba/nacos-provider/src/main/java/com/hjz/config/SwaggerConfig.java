@@ -22,26 +22,26 @@ public class SwaggerConfig {
 
     //---------------------------------默认的指定空间--------------------------------------------
     @Bean
-    public Docket api(){
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-             .groupName("defalut1")  //默认模块的名称不需要写,不然会报错
-             .enable(true)
-             .apiInfo(apiInfo())
-             .pathMapping("/")
-             .select()
-              .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))  //只是扫描带注解的
-             .paths(PathSelectors.regex("/.*"))  //对根下所有路径进行监控
-             .build();
+                .groupName("defalut1")  //默认模块的名称不需要写,不然会报错
+                .enable(true)
+                .apiInfo(apiInfo())
+                .pathMapping("/")
+                .select()
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))  //只是扫描带注解的
+                .paths(PathSelectors.regex("/.*"))  //对根下所有路径进行监控
+                .build();
     }
 
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //标题
 //                .title(projectName.split("/")[1] +"接口文档")
                 //描述
                 .description("lalala")
                 .version("1.0.0")
-                .contact(new Contact("jingzheng.hu",null,"EX-HUJINGZHENGOO1@pingan.com.cn"))
+                .contact(new Contact("jingzheng.hu", null, "EX-HUJINGZHENGOO1@pingan.com.cn"))
                 .build();
     }
 

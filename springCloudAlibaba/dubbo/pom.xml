@@ -22,8 +22,9 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
 
-        <nacos.version>1.2.1</nacos.version>
-        <revision>2.7.7</revision>
+        <nacos.version>1.4.1</nacos.version>
+        <dubbo-spring-boot-starter.vision>2.7.8</dubbo-spring-boot-starter.vision>
+        <dubbo-registry-nacos.version>2.7.8</dubbo-registry-nacos.version>
     </properties>
 
     <dependencies>
@@ -42,7 +43,7 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${revision}</version>
+            <version>${dubbo-spring-boot-starter.vision}</version>
         </dependency>
 
         <!-- Dubbo Registry Nacos -->
@@ -50,7 +51,7 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
-            <version>2.7.1</version>
+            <version>${dubbo-registry-nacos.version}</version>
         </dependency>
 
         <dependency>

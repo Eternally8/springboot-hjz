@@ -1,6 +1,7 @@
 package com.hjz;
 
 import com.jz.DemoService;
+import com.jz.vo.StudentVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
@@ -24,7 +25,10 @@ public class DubboConsumerApplication {
 
     @Bean
     public ApplicationRunner runner() {
-        return args -> log.info(demoService.sayHello("mercyblitz"));
+        StudentVo vo = new StudentVo();
+        vo.setAge(1);
+        vo.setName("kkkkkk");
+        return args -> log.info(demoService.sayHello(vo));
     }
 
 }

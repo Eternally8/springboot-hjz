@@ -1,6 +1,8 @@
 package com.hjz.service;
 
+import com.alibaba.fastjson.JSON;
 import com.jz.DemoService;
+import com.jz.vo.StudentVo;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,8 @@ import org.springframework.stereotype.Service;
 public class DemoServiceImpl implements DemoService {
 
     @Override
-    public String sayHello(String name) {
-        return "lalala:" + name;
+    public String sayHello(StudentVo vo) {
+        return "我看到了一个学生:" + JSON.toJSONString(vo);
     }
 
 }

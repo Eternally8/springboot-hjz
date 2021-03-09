@@ -1,5 +1,7 @@
 package com.jz;
 
+import com.jz.vo.StudentVo;
+
 /**
  * Description： TODO
  * Author: hujingzheng
@@ -7,6 +9,6 @@ package com.jz;
  */
 public interface DemoService {
 
-    String sayHello(String name);
+    String sayHello(StudentVo vo);
 
 }

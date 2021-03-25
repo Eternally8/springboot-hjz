@@ -6,9 +6,9 @@ import java.util.concurrent.Semaphore;
 
 public class SemaphoreTest {
     public static void main(String[] args) {
-        int N = 8;            //工人数
+        int manCount = 8;            //工人数
         Semaphore semaphore = new Semaphore(5); //机器数目
-        for(int i=0;i<N;i++){
+        for(int i=0;i<manCount;i++){
             new Worker(i,semaphore).start();
         }
     }

@@ -18,6 +18,7 @@ public class CodeGenerate {
     private static String Url = "jdbc:mysql://10.0.81.124:3306/"+DataBaseName+"?useUnicode=true&useSSL=false&characterEncoding=utf8";
     private static String DriverName = "com.mysql.cj.jdbc.Driver";
     private static String Username = "root";
+
     private static String Password = "*****";
 
     private static String projectPath = System.getProperty("user.dir");

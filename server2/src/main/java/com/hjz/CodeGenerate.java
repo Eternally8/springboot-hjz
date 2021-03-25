@@ -19,6 +19,7 @@ public class CodeGenerate {
     private static String DriverName = "com.mysql.cj.jdbc.Driver";
     private static String Username = "root";
     private static String Password = "*****";
+
     private static String projectPath = System.getProperty("user.dir");
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.hjz.controller;
+package com.apollouse.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

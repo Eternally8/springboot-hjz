@@ -1,4 +1,4 @@
-package com.hjz.xxljob;
+package com.xxljob.controller;
 
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.annotation.XxlJob;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class DemoJobHandler{
+public class DemoJobHandler {
 
 	@XxlJob(value = "lalala")
 	public ReturnT<String> lalala(String param) throws Exception {

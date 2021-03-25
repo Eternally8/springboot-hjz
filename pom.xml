@@ -13,6 +13,7 @@
         <module>server-main</module>
         <module>springCloudAlibaba</module>
         <module>springCloud</module>
+        <module>middleware</module>
     </modules>
 
     <!--SpringBoot的父依赖启动 -->
@@ -51,7 +52,6 @@
         <knife4j-v>3.0.2</knife4j-v>
         <lombok-v>1.18.10</lombok-v>
         <fastjson-v>1.2.58</fastjson-v>
-        <gson-v>2.8.5</gson-v>
         <guava-v>27.1-jre</guava-v>
 
         <junit-v>4.13.1</junit-v>
@@ -143,6 +143,17 @@
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
 
     </dependencies>
 

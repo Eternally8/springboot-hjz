@@ -1,5 +1,4 @@
-package com.hjz;
-
+package com.codegenerate;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;

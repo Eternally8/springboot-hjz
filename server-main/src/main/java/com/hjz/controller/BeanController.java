@@ -21,7 +21,7 @@ import java.util.Map;
 @Api(tags = "对外接口")
 @RestController
 @RequestMapping("/outapi")
-public class OutApiController {
+public class BeanController {
     @Autowired
     private ApplicationContext applicationContext;
     @Autowired

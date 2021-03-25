@@ -18,19 +18,15 @@
         <encoding>UTF-8</encoding>
 
         <mysql-connect-java-v>8.0.22</mysql-connect-java-v>
-        <druid-spring-boot-starter-v>1.2.1</druid-spring-boot-starter-v>
         <mybatis-plus-boot-starter-v>3.4.2</mybatis-plus-boot-starter-v>
-
         <mybatis-generator-maven-plugin-v>1.4.0</mybatis-generator-maven-plugin-v>
 
-        <xxl-job-v>2.2.0</xxl-job-v>
-        <apollo-v>1.8.0</apollo-v>
+
         <easyexcel-v>2.2.6</easyexcel-v>
 
         <maven-invoker-v>3.0.1</maven-invoker-v>
         <jruby-complete-v>9.2.8.0</jruby-complete-v>
 
-        <spring-kafka-v>2.4.1.RELEASE</spring-kafka-v>
         <docker-maven-plugin-v>1.2.0</docker-maven-plugin-v>
     </properties>
 
@@ -106,23 +102,6 @@
         </dependency>
 
         <!-- ###################第三方框架#####################-->
-        <dependency>
-            <groupId>com.xuxueli</groupId>
-            <artifactId>xxl-job-core</artifactId>
-            <version>${xxl-job-v}</version>
-        </dependency>
-
-        <!--apollo-->
-        <dependency>
-            <groupId>com.ctrip.framework.apollo</groupId>
-            <artifactId>apollo-client</artifactId>
-            <version>${apollo-v}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.ctrip.framework.apollo</groupId>
-            <artifactId>apollo-openapi</artifactId>
-            <version>${apollo-v}</version>
-        </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -135,23 +114,6 @@
             <artifactId>jruby-complete</artifactId>
             <version>${jruby-complete-v}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.kafka</groupId>-->
-<!--            <artifactId>spring-kafka</artifactId>-->
-<!--            <version>${spring-kafka-v}</version>-->
-<!--        </dependency>-->
 
     </dependencies>
 

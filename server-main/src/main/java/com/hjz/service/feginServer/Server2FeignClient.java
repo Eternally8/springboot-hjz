@@ -1,4 +1,4 @@
-package com.hjz.service.otherServer;
+package com.hjz.service.feginServer;
 
 //直接调用的方式
 //@FeignClient(name="server2",url = "http://localhost:28082/server2")

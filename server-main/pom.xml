@@ -25,7 +25,8 @@
         <mybatis-generator-maven-plugin-v>1.4.0</mybatis-generator-maven-plugin-v>
 
         <xxl-job-v>2.2.0</xxl-job-v>
-        <apollo-v>1.5.1</apollo-v>
+        <apollo-v>1.8.0</apollo-v>
+        <easyexcel-v>2.2.6</easyexcel-v>
 
         <maven-invoker-v>3.0.1</maven-invoker-v>
         <jruby-complete-v>9.2.8.0</jruby-complete-v>
@@ -79,10 +80,10 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -103,10 +104,10 @@
         </dependency>
 
         <!-- Eureka服务端 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
+<!--        </dependency>-->
 
         <!--####################数据库连接配置mybatis########################-->
         <!--mysql 连接驱动链接-->
@@ -121,11 +122,11 @@
             <version>${druid-spring-boot-starter-v}</version>
         </dependency>
         <!--springboot-mybaits-->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis-spring-boot-mybatis-v}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.mybatis.spring.boot</groupId>-->
+<!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--            <version>${mybatis-spring-boot-mybatis-v}</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -170,13 +171,13 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
-            <version>2.2.6</version>
+            <version>${easyexcel-v}</version>
         </dependency>
 
         <dependency>
             <groupId>com.ctrip.framework.apollo</groupId>
             <artifactId>apollo-openapi</artifactId>
-            <version>1.7.0</version>
+            <version>${apollo-v}</version>
         </dependency>
 
         <dependency>
@@ -185,7 +186,18 @@
             <version>${jruby-complete-v}</version>
         </dependency>
 
-<!--        <dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--        <dependency>-->
 <!--            <groupId>org.springframework.kafka</groupId>-->
 <!--            <artifactId>spring-kafka</artifactId>-->
 <!--            <version>${spring-kafka-v}</version>-->

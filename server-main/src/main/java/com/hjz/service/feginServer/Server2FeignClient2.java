@@ -1,4 +1,4 @@
-package com.hjz.service.otherServer;
+package com.hjz.service.feginServer;
 
 import com.hjz.model.StudentVo;
 import org.springframework.cloud.openfeign.FeignClient;

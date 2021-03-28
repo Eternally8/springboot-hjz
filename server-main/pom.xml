@@ -21,7 +21,6 @@
         <mybatis-plus-boot-starter-v>3.4.2</mybatis-plus-boot-starter-v>
         <mybatis-generator-maven-plugin-v>1.4.0</mybatis-generator-maven-plugin-v>
 
-
         <easyexcel-v>2.2.6</easyexcel-v>
 
         <maven-invoker-v>3.0.1</maven-invoker-v>
@@ -42,10 +41,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

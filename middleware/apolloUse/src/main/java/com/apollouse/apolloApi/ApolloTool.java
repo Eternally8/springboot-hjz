@@ -1,4 +1,4 @@
-package com.hjz.utils.apolloApi;
+package com.apollouse.apolloApi;
 
 import com.ctrip.framework.apollo.openapi.client.ApolloOpenApiClient;
 

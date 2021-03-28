@@ -1,4 +1,4 @@
-package com.hjz.actualproblem;
+package com.hjz.aproblem;
 
 import cn.hutool.core.util.RandomUtil;
 

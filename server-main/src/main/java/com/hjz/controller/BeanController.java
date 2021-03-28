@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,7 @@ public class BeanController {
         log.info("测试修改注入bean的字段值_benaName:{},beanField:{},beanFieldValue:{}",benaName,beanField,beanFieldValue);
 
         Map<String,String> map = new HashMap<>();
-        if(StringUtils.isBankQuotes(benaName) || StringUtils.isBankQuotes(beanField) || StringUtils.isBankQuotes(beanFieldValue)){
+        if(StringUtils.isBlank(benaName) || StringUtils.isBlank(beanField) || StringUtils.isBlank(beanFieldValue)){
             map.put("result","输入参数有误");
             return map;
         }

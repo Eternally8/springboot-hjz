@@ -2,6 +2,7 @@ package com.hjz.utils;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -32,7 +33,7 @@ public class RedisUtils {
     public boolean setString(final String key,Object value){
         boolean result = false;
 
-        if(StringUtils.isBankQuotes(key) || value == null){
+        if(StringUtils.isBlank(key) || value == null){
             return result;
         }
 
@@ -52,7 +53,7 @@ public class RedisUtils {
      * @return
      */
     public boolean setStringWithMinutes(final String key,Object value,int time){
-        if(StringUtils.isBankQuotes(key) || value == null || time <= 0){
+        if(StringUtils.isBlank(key) || value == null || time <= 0){
             return false;
         }
 

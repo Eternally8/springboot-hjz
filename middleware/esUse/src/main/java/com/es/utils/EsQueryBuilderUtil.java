@@ -1,4 +1,4 @@
-package com.hjz.utils.ES;
+package com.es.utils;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -6,13 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * @ClassName EsParamsFormatUtil
- *
- * @Author ccy
- * @Date 2020/8/10 11:31
- * @Version 1.0
- **/
+
 public class EsQueryBuilderUtil {
     //limit
     private int size;

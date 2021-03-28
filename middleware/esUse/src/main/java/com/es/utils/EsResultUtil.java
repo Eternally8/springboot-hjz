@@ -1,4 +1,4 @@
-package com.hjz.utils.ES;
+package com.es.utils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -6,11 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 2 * @Author: wuxinxin
- * 3 * @Date: 2021/3/2 16:34
- * 4
- */
+
 public class EsResultUtil {
 
     public static List<JSONObject> listResult(JSONObject data) {

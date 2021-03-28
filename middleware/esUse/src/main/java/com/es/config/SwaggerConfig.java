@@ -1,4 +1,4 @@
-package com.apollouse.config;
+package com.es.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +34,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springbootApollo")
+                .title("springbootES")
                 .version("1.0.0")
                 .build();
     }

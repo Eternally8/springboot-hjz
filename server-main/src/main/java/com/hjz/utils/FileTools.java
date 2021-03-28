@@ -1,7 +1,7 @@
 package com.hjz.utils;
 
-import Header;
-import HttpRequest;
+import cn.hutool.http.Header;
+import cn.hutool.http.HttpRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,7 +18,8 @@ import java.io.OutputStream;
 @Slf4j
 public class FileTools {
 
-    public static boolean upload(MultipartFile file,String filePath){
+
+    public static boolean upload(MultipartFile file, String filePath){
         try {
             File f = multipartFileToFile(file);
             String result = HttpRequest.post("ConstantMp.cloudServerPath")

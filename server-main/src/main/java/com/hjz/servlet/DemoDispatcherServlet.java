@@ -1,7 +1,7 @@
 package com.hjz.servlet;
 
-import HttpRequest;
-import HttpResponse;
+import cn.hutool.http.HttpResponse;
+import org.springframework.http.HttpRequest;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

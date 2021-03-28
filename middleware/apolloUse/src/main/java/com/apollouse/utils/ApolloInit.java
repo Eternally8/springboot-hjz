@@ -1,4 +1,4 @@
-package com.apollouse.apolloApi;
+package com.apollouse.utils;
 
 import cn.hutool.setting.dialect.Props;
 import com.alibaba.fastjson.JSON;

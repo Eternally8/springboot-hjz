@@ -1,4 +1,4 @@
-package com.hjz.bigData.elasticSearch;
+package com.es.model;
 
 import lombok.Data;
 

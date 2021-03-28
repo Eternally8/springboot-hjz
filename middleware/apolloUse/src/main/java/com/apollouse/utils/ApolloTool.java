@@ -1,4 +1,4 @@
-package com.apollouse.apolloApi;
+package com.apollouse.utils;
 
 import com.ctrip.framework.apollo.openapi.client.ApolloOpenApiClient;
 
@@ -8,8 +8,6 @@ import com.ctrip.framework.apollo.openapi.client.ApolloOpenApiClient;
  * Date: 2021/2/8 14:29
  */
 public class ApolloTool {
-
-//    private static final String portalUrl = "http://10.0.81.97:8070"; // portal url
     private static final String portalUrl = "http://127.0.0.1:8070";
     private static final String token = "*********************"; // 申请的token
 

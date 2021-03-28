@@ -1,7 +1,7 @@
 package com.hjz.servlet;
 
-import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;
+import HttpRequest;
+import HttpResponse;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

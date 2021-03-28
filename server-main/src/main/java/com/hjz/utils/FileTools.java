@@ -1,7 +1,7 @@
 package com.hjz.utils;
 
-import cn.hutool.http.Header;
-import cn.hutool.http.HttpRequest;
+import Header;
+import HttpRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 

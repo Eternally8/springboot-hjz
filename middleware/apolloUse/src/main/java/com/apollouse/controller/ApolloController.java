@@ -1,5 +1,6 @@
 package com.apollouse.controller;
 
+import com.ctrip.framework.apollo.ConfigService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,8 @@ public class ApolloController {
     @GetMapping("/getApolloValue")
     public String getApolloValue() {
         log.info("apollo配置项的值:{}",testApolloValue);
+        System.out.println(ConfigService.getAppConfig().getProperty("lalala","123"));
+
         return testApolloValue;
     }
 

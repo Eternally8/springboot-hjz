@@ -1,6 +1,8 @@
-package com.hjz.bigData.elasticSearch;
+package com.es.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.es.model.Person;
+import com.es.model.SearchParam;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.nio.entity.NStringEntity;
 import org.apache.http.util.EntityUtils;
@@ -18,7 +20,6 @@ import java.io.IOException;
 @Slf4j
 public class MyService {
 
-//    @Qualifier("ESClient")
     @Autowired
     private RestClient client;
 

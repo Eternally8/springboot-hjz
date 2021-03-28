@@ -1,9 +1,12 @@
-package com.hjz.bigData.elasticSearch;
+package com.es.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.es.model.SearchParam;
+import com.es.service.MyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +23,8 @@ public class MyController {
 
     @Autowired
     private MyService service;
-//    @Autowired
-//    private ElasticsearchRestTemplate elasticsearchTemplate;
+    @Autowired
+    private ElasticsearchRestTemplate elasticsearchTemplate;
 
 
     @PostMapping("/search")

@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,5 +56,35 @@ public class KafkaController {
         log.info("请求发送完成:{}",params);
         return "success";
     }
+
+
+    @ApiOperation("事务发送")
+    @GetMapping("/transactionSend")
+    public String transactionSend(String params) {
+        log.info("开始发送请求:{}",params);
+
+        // 声明事务：后面报错消息不会发出去
+        kafkaTemplate.executeInTransaction(operations -> {
+            operations.send(KakfaConstant.topic1,params);
+            int a = 0;
+            int b = 1/a;
+            return "faile";
+        });
+
+        return "success";
+    }
+
+
+    @ApiOperation("事务发送2")
+    @GetMapping("/transactionSend2")
+    @Transactional(rollbackFor = RuntimeException.class)
+    public String transactionSend2(String params) {
+        log.info("开始发送请求:{}",params);
+
+        // 声明事务：后面报错消息不会发出去
+        kafkaTemplate.send(KakfaConstant.topic1,params);
+        throw new RuntimeException("failed");
+    }
+
 
 }

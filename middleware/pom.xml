@@ -18,6 +18,7 @@
         <module>codeGenerate</module>
         <module>esUse</module>
         <module>rabbitmqUse</module>
+        <module>kafkaUse</module>
     </modules>
 
     <properties>

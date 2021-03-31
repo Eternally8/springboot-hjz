@@ -1,5 +1,11 @@
 package com.kafka.handleMsg;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.stereotype.Component;
+
 /**
  * Description： TODO
  * Author: hujingzheng
@@ -8,27 +14,28 @@ package com.kafka.handleMsg;
  * 返回true的时候消息将会被抛弃，返回false时，消息能正常抵达监听容器。
  */
 
-//@Component
-//public class FilterMsgHandler {
-//    @Autowired
-//    ConsumerFactory consumerFactory;
-//
-//    // 消息过滤器
-//    @Bean
-//    public ConcurrentKafkaListenerContainerFactory filterContainerFactory() {
-//        ConcurrentKafkaListenerContainerFactory factory = new ConcurrentKafkaListenerContainerFactory();
-//        factory.setConsumerFactory(consumerFactory);
-//        // 被过滤的消息将被丢弃
-//        factory.setAckDiscarded(true);
-//        // 消息过滤策略
-//        factory.setRecordFilterStrategy(consumerRecord -> {
-//            if ("123".equals(consumerRecord.value().toString())) {
-//                return false;
-//            }
-//            //返回true消息则被过滤
-//            return true;
-//        });
-//        return factory;
-//    }
-//
-//}
+@Component
+public class FilterMsgHandler {
+    @Autowired
+    ConsumerFactory consumerFactory;
+
+    // 消息过滤器
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory filterContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory factory = new ConcurrentKafkaListenerContainerFactory();
+        factory.setConsumerFactory(consumerFactory);
+        // 被过滤的消息将被丢弃
+        factory.setAckDiscarded(true);
+        // 消息过滤策略
+        factory.setRecordFilterStrategy(consumerRecord -> {
+            //返回true的时候消息将会被抛弃，返回false时，消息能正常抵达监听容器。
+            if (!"qq".equals(consumerRecord.value().toString())) {
+                return false;
+            }
+            //返回true消息则被过滤
+            return true;
+        });
+        return factory;
+    }
+
+}

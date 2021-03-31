@@ -23,10 +23,15 @@ public class KafkaController {
 
     @ApiOperation("简单发送")
     @GetMapping("/send")
+    @Transactional
     public String send(String params) {
         log.info("开始发送请求:{}",params);
         
         kafkaTemplate.send(KakfaConstant.topic1, params);
+
+        //kafka允许为每条消息设置一个key，一旦消息被定义了 Key，那么就可以保证同一个 Key 的所有消息都进入到相同的分区，
+        // 这种策略属于自定义策略的一种，被称作"按消息key保存策略"，或Key-ordering 策略。
+        kafkaTemplate.send(KakfaConstant.topic1,"key11", params);
 
         log.info("请求发送完成:{}",params);
         return "success";
@@ -58,33 +63,34 @@ public class KafkaController {
     }
 
 
-    @ApiOperation("事务发送")
+    @ApiOperation("事务正常发送")
     @GetMapping("/transactionSend")
     public String transactionSend(String params) {
         log.info("开始发送请求:{}",params);
 
-        // 声明事务：后面报错消息不会发出去
         kafkaTemplate.executeInTransaction(operations -> {
             operations.send(KakfaConstant.topic1,params);
-            int a = 0;
-            int b = 1/a;
-            return "faile";
+            return "lalalal";
         });
 
         return "success";
     }
 
-
-    @ApiOperation("事务发送2")
+    @ApiOperation("事务异常发送-模板方法")
     @GetMapping("/transactionSend2")
-    @Transactional(rollbackFor = RuntimeException.class)
-    public String transactionSend2(String params) {
-        log.info("开始发送请求:{}",params);
-
-        // 声明事务：后面报错消息不会发出去
-        kafkaTemplate.send(KakfaConstant.topic1,params);
-        throw new RuntimeException("failed");
+    public void transactionSend2(String params){
+        kafkaTemplate.executeInTransaction(operations -> {
+            operations.send(KakfaConstant.topic1,params);
+            throw new RuntimeException("fail");
+        });
     }
 
+    @ApiOperation("事务异常发送-注解")
+    @GetMapping("/transactionSend3")
+    @Transactional
+    public void transactionSend3(String params){
+        kafkaTemplate.send(KakfaConstant.topic1, params);
+        throw new RuntimeException("fail");
+    }
 
 }

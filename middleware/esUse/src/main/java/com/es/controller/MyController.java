@@ -1,10 +1,17 @@
 package com.es.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.es.config.ESConfig;
 import com.es.model.SearchParam;
 import com.es.service.MyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +32,25 @@ public class MyController {
     private MyService service;
     @Autowired
     private ElasticsearchRestTemplate elasticsearchTemplate;
+    @Autowired
+    private RestHighLevelClient rClient;
+    @Autowired
+    private ESConfig eSConfig;
+
+    @PostMapping("/search1")
+    @ApiOperation("根据id查询ES对应的数据")
+    public void searchMatch(String key, String value) throws Exception {
+        SearchRequest searchRequest = new SearchRequest("risk-20210330");
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+//        searchSourceBuilder.query(QueryBuilders.matchQuery(key,value));
+        searchSourceBuilder.from(0);
+        searchSourceBuilder.size(10);
+        searchRequest.source(searchSourceBuilder);
+        SearchResponse response = eSConfig.getClient().search(searchRequest, RequestOptions.DEFAULT);
+        System.out.println(JSONObject.toJSON(response));
+
+        SearchHit[] hits = response.getHits().getHits();
+    }
 
 
     @PostMapping("/search")

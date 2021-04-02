@@ -43,7 +43,7 @@ public class ESConfig {
     private  String eskeystorePath;
 
 
-    public RestHighLevelClient getClient() throws Exception {
+    public RestHighLevelClient getClient() {
         String[] hosts = esHost.split(",");
         HttpHost[] httpHostsList = new HttpHost[hosts.length];
 
@@ -99,10 +99,14 @@ public class ESConfig {
             });
             RestHighLevelClient restHighLevelClient = new RestHighLevelClient(builder);
             return restHighLevelClient;
-        } catch (Exception var23) {
-            throw new Exception("Building elastic search rest high level client failed!", var23);
+        } catch (Exception e) {
+           e.printStackTrace();
         }
+
+        return null;
     }
+
+
 
     private static void close(RestHighLevelClient client) {
         try {

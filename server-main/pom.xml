@@ -22,6 +22,7 @@
         <mybatis-generator-maven-plugin-v>1.4.0</mybatis-generator-maven-plugin-v>
 
         <easyexcel-v>2.2.6</easyexcel-v>
+        <json-path-v>2.5.0</json-path-v>
 
         <maven-invoker-v>3.0.1</maven-invoker-v>
         <jruby-complete-v>9.2.8.0</jruby-complete-v>
@@ -109,6 +110,11 @@
             <version>${jruby-complete-v}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path-v}</version>
+        </dependency>
     </dependencies>
 
 

@@ -2,29 +2,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <artifactId>springbootdemo</artifactId>
+        <artifactId>middleware</artifactId>
         <groupId>com.jz</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>middleware</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>apolloUse</module>
-        <module>xxlJobUse</module>
-        <module>codeGenerate</module>
-        <module>esUse</module>
-        <module>rabbitmqUse</module>
-        <module>kafkaUse</module>
-        <module>rocketmqUse</module>
-    </modules>
+    <artifactId>rocketmqUse</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+
+    </dependencies>
+
+
 
 </project>

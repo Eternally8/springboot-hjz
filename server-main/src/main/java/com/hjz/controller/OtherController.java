@@ -1,5 +1,6 @@
 package com.hjz.controller;
 
+import com.hjz.config.WebSocketComponent;
 import com.hjz.service.OtherService;
 import com.hjz.utils.Contants;
 import com.hjz.utils.MyBeanMap;
@@ -9,10 +10,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import java.io.IOException;
 
 @Slf4j
 @Api(tags = "其他方法测试")
@@ -22,16 +26,19 @@ public class OtherController {
     @Autowired
     private OtherService otherService;
 
-
     @ApiOperation(value = "测试接口连通性")
     @GetMapping("testApi")
     public String testApi() {
        log.info("1");
-       log.info("2");
-       log.info("3");
-        return "suceess";
+       return "suceess";
     }
 
+    @ApiOperation(value = "websocket消息推送")
+    @PostMapping("sendWebscoketMsg")
+    public String sendWebscoketMsg(String msg) throws IOException {
+        WebSocketComponent.sendInfo(msg,"1");
+        return "suceess";
+    }
 
     @ApiOperation(value = "测试注解异步线程执行")
     @GetMapping("test")

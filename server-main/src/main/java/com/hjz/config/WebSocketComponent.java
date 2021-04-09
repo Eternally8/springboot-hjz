@@ -97,7 +97,7 @@ public class WebSocketComponent {
      * */
     public static void sendInfo(String message,@PathParam("userId") String userId) throws IOException {
         log.info("发送消息到:"+userId+"，报文:"+message);
-        if(StringUtils.isNotBlank(userId)&&webSocketMap.containsKey(userId)){
+        if(StringUtils.isNotBlank(userId) && webSocketMap.containsKey(userId)){
             webSocketMap.get(userId).sendMessage(message);
         }else{
             log.error("用户"+userId+",不在线！");

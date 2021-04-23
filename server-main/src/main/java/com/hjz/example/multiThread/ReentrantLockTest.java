@@ -15,7 +15,7 @@ public class ReentrantLockTest {
 
     private Lock lock = new ReentrantLock();
 
-    public void test() {
+    public void work() {
         String tName = Thread.currentThread().getName();
         try {
             log.info(tName + "-开始获取锁..........");
@@ -44,14 +44,14 @@ public class ReentrantLockTest {
         Thread t0 = new Thread(){
             @Override
             public void run() {
-                vo.test();
+                vo.work();
             }
         };
 
         Thread t1=new Thread(){
             @Override
             public void run() {
-                vo.test();
+                vo.work();
             }
         };
 
@@ -66,7 +66,7 @@ public class ReentrantLockTest {
 
             log.info(tName+"-t1获取不到锁，t0这货睡觉了，没释放，我等个5秒！");
             Thread.sleep(5000);
-            log.info(tName+"-等了5秒了，不等了，把t1中断了！");
+            log.info(tName+"-等了5秒了，不等了，让t1不干活了！");
             t1.interrupt();
         } catch (Exception e) {
             e.printStackTrace();

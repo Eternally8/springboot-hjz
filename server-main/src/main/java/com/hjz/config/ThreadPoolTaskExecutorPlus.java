@@ -15,7 +15,6 @@ public class ThreadPoolTaskExecutorPlus extends ThreadPoolTaskExecutor {
 
     private void showThreadPoolInfo(String prefix){
         ThreadPoolExecutor threadPoolExecutor = getThreadPoolExecutor();
-
         if(null == threadPoolExecutor){
             return;
         }

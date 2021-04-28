@@ -1,4 +1,4 @@
-package com.hjz.example.other;
+package com.hjz.example.objectSize;
 
 import com.carrotsearch.sizeof.RamUsageEstimator;
 

@@ -86,16 +86,14 @@ public class MybatisPlusInterceptor implements Interceptor {
                 Object a = parameter.get(keyList[2]);
                 if (a instanceof String &&
                         (a.toString().contains("_") || a.toString().contains("\\") || a.toString().contains("%"))) {
-                    parameter.put(keyList[2],
-                            "%" + escapeChar(a.toString().substring(1, a.toString().length() - 1)) + "%");
+                    parameter.put(keyList[2], "%" + escapeChar(a.toString().substring(1, a.toString().length() - 1)) + "%");
                 }
             } else if (!keyName.contains("ew.paramNameValuePairs.") && sql.toLowerCase().contains(" like ?")) {
                 // 第二种情况：未使用条件构造器，但是在service层进行了查询关键字与模糊查询符`%`手动拼接
                 Object a = parameter.get(keyName);
                 if (a instanceof String &&
                         (a.toString().contains("_") || a.toString().contains("\\") || a.toString().contains("%"))) {
-                    parameter.put(keyName,
-                            "%" + escapeChar(a.toString().substring(1, a.toString().length() - 1)) + "%");
+                    parameter.put(keyName, "%" + escapeChar(a.toString().substring(1, a.toString().length() - 1)) + "%");
                 }
             } else {
                 // 第三种情况：在Mapper类的注解SQL中进行了模糊查询的拼接

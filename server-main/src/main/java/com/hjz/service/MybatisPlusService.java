@@ -1,10 +1,13 @@
 package com.hjz.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hjz.dao.mybatisPlus.UserMbplusInfoMapper;
 import com.hjz.model.UserMbplusInfoEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Slf4j
@@ -32,5 +35,9 @@ public class MybatisPlusService {
     }
 
 
-
+    public List<UserMbplusInfoEntity> getUserByName(String name) {
+        QueryWrapper<UserMbplusInfoEntity> q = new QueryWrapper<>();
+        q.like("name", name);
+        return userMbplusInfoMapper.selectList(q);
+    }
 }

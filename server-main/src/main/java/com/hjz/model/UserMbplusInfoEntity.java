@@ -1,5 +1,7 @@
 package com.hjz.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -11,6 +13,8 @@ import java.util.Date;
 @TableName("user_mbplus_info")
 public class UserMbplusInfoEntity {
 
+    //默认不是自增,需要增加这个
+    @TableId(type = IdType.AUTO)
     private Integer id;
     private String name;
     private boolean sex;

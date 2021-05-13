@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -48,11 +47,6 @@ public class MybatisPlusInterceptor implements Interceptor {
     @Override
     public Object plugin(Object target) {
         return Plugin.wrap(target, this);
-    }
-
-    @Override
-    public void setProperties(Properties properties) {
-
     }
 
     @SuppressWarnings("unchecked")

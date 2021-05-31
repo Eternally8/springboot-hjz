@@ -1,8 +1,9 @@
 package com.hjz.controller;
 
-import com.hjz.example.aop.DeclareParents.Animal;
-import com.hjz.example.aop.DeclareParents.Person;
-import com.hjz.example.aop.DeclareParents.Women;
+import com.hjz.annotation.aop.DeclareParents.Animal;
+import com.hjz.annotation.aop.DeclareParents.Person;
+import com.hjz.annotation.aop.DeclareParents.Women;
+import com.hjz.service.AopService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -19,19 +20,28 @@ import org.springframework.web.bind.annotation.RestController;
 public class AopController {
     @Autowired
     private Women women;
+    @Autowired
+    private AopService aopService;
 
     @ApiOperation(value = "测试springAop使用",notes = "测试springAop使用")
     @PostMapping(value = "/getUser1")
     public String getUser1(String name){
         log.info("getUser1_name:{}",name);
-
         return name;
     }
 
-    @ApiOperation(value = "测试@DeclareParents使用")
-    @RequestMapping(value = "/getUser2",method = RequestMethod.POST)
+
+    @ApiOperation(value = "测试springAop使用2")
+    @PostMapping(value = "/getUser2")
     public String getUser2(String name){
-        log.info("getUser2_name:{}",name);
+        return aopService.getValue(name);
+    }
+
+
+    @ApiOperation(value = "测试@DeclareParents使用")
+    @RequestMapping(value = "/getUser3",method = RequestMethod.POST)
+    public String getUser3(String name){
+        log.info("getUser3_name:{}",name);
 
         Person person = women;
         person.likePerson();

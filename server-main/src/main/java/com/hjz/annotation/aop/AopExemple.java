@@ -1,4 +1,4 @@
-package com.hjz.example.aop;
+package com.hjz.annotation.aop;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;

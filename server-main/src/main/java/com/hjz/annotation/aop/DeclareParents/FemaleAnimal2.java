@@ -1,4 +1,4 @@
-package com.hjz.example.aop.DeclareParents;
+package com.hjz.annotation.aop.DeclareParents;
 
 import org.springframework.stereotype.Component;
 

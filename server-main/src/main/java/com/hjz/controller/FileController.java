@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URLEncoder;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Description： TODO
@@ -93,8 +94,6 @@ public class FileController extends UnifiedReply {
         createCSVFile(datalist,resp);
     }
 
-
-
     @ApiOperation(value = "下载xls",notes = "依赖alibaba-easyexcel")
     @PostMapping("/downLogInfoMj")
     public void downLogInfoMj(HttpServletResponse resp) throws IOException {
@@ -106,6 +105,55 @@ public class FileController extends UnifiedReply {
 
         EasyExcel.write(resp.getOutputStream(), DownloadData.class).sheet("模板").doWrite(data());
     }
+
+
+    @ApiOperation("自定义目录文件上传保存")
+    @PostMapping("uploadSelf")
+    public ResponseEntityDto<?> uploadSelf(@RequestPart("file") MultipartFile file,
+                                           @RequestParam("filePath") String filePath) {
+        if (!FileUtil.isDirectory(filePath)) {
+            FileUtil.mkdir(filePath);
+        }
+
+        try (InputStream in = file.getInputStream()) {
+            FileUtil.writeFromStream(in, filePath + "/" + file.getOriginalFilename());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return buildSuccesResp();
+    }
+
+
+    @ApiOperation("获取自定义路径下文件列表")
+    @GetMapping("/catalogFiles")
+    public ResponseEntityDto<?> catalogFiles(@ApiParam("filePath") @RequestParam("filePath") String filePath) {
+        // 获取压缩包中所有模块的信息
+        List<String> moduleNames = Arrays.stream(FileUtil.ls(filePath))
+                .filter(File::isFile).map(File::getName).collect(Collectors.toList());
+        return buildSuccesResp(moduleNames);
+    }
+
+
+    @ApiOperation("自定义下载文件")
+    @GetMapping("/downSelf")
+    public ResponseEntity<?> downSelf(@ApiParam("filePath") @RequestParam("filePath") String filePath) {
+        //根据路径 api返回文件
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        headers.add("Pragma", "no-cache");
+        headers.add("Expires", "0");
+        headers.add("Content-Disposition", "attachment; filename=" + FileUtil.newFile(filePath).getName());
+        headers.add("filename", FileUtil.newFile(filePath).getName());
+
+        InputStreamResource resource = new InputStreamResource(FileUtil.getInputStream(filePath));
+        return ResponseEntity.ok()
+                .headers(headers)
+                .contentLength(FileUtil.file(filePath).length())
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .body(resource);
+    }
+
 
     private List<String> data() {
         List<String> list = new ArrayList<String>();

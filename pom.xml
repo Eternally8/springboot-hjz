@@ -52,7 +52,7 @@
         <knife4j-v>3.0.2</knife4j-v>
         <lombok-v>1.18.10</lombok-v>
         <fastjson-v>1.2.58</fastjson-v>
-        <guava-v>27.1-jre</guava-v>
+        <guava-v>30.0-jre</guava-v>
 
         <junit-v>4.13.1</junit-v>
         <commons-lang3-v>3.9</commons-lang3-v>

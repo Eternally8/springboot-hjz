@@ -2,10 +2,8 @@ package com.hjz.annotation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -25,16 +23,50 @@ public class AopSetNameTimeAspect {
     public void doAop(AopSetNameTime aopSetNameTime) {
     }
 
+//正常情况 @Around @Before 目标方法 @Around @AfterReturning @After;
+//异常情况 @Around @Before 目标方法 @After @AfterThrowing;
+//    try{
+//        try{
+//            //@Around
+//            //@Before
+//            method.invoke(..);
+//            //@Around
+//        }catch(){
+//            throw.....;
+//        }finally{
+//            //@After
+//        }
+//        //@AfterReturning
+//    }catch(){
+//        //@AfterThrowing
+//    }
 
-    @Before("doAop(AopSetNameTime)")   // 表演之前
-    public void t1(JoinPoint point){
-        String methodName = point.getSignature().getName();
-        List<Object> args = Arrays.asList(point.getArgs());
+
+    @Around("doAop(aopSetNameTime)")
+    public Object t3(ProceedingJoinPoint pjp , AopSetNameTime aopSetNameTime) throws Throwable {
+        log.info("1");
+        Object result = pjp.proceed();
+        log.info("2");
+        return result;
+    }
+
+
+    @Before("doAop(aopSetNameTime)")
+    public void t1(JoinPoint pjp , AopSetNameTime aopSetNameTime){
+        //获取切面执行的方法
+        String methodName = pjp.getSignature().getName();
+        //获取切面的入参
+        List<Object> args = Arrays.asList(pjp.getArgs());
         System.out.println("调用前连接点方法为：" + methodName + ",参数为：" + args);
     }
 
-    @AfterReturning(returning="rvt", value="doAop(AopSetNameTime)")
-    public String handleAop(Object rvt) {
+    @After("doAop(aopSetNameTime)")
+    public void t2(JoinPoint pjp ,AopSetNameTime aopSetNameTime){
+        System.out.println("AopExemple_@After");
+    }
+
+    @AfterReturning(returning="rvt", value="doAop(aopSetNameTime)")
+    public String handleAop(JoinPoint pjp ,AopSetNameTime aopSetNameTime,Object rvt) {
         System.out.println("获取目标方法返回值:" + rvt.toString());
         return "注解处理类返回";
     }

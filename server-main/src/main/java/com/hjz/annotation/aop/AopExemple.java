@@ -25,7 +25,7 @@ public class AopExemple {
     public void performance(){
     }
 
-//正常情况 @Around @Before 目标方法 @Around @After @AfterReturning;
+//正常情况 @Around @Before 目标方法 @Around @AfterReturning @After;
 //异常情况 @Around @Before 目标方法 @After @AfterThrowing;
 //    try{
 //        try{
@@ -42,8 +42,6 @@ public class AopExemple {
 //    }catch(){
 //        //@AfterThrowing
 //    }
-
-
 
 
     //定义通知

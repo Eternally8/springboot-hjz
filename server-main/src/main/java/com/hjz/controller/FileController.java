@@ -38,9 +38,15 @@ public class FileController extends UnifiedReply {
     @PostMapping
     public ResponseEntityDto<?> createPackage(@ApiParam("文件名") @RequestParam("fileName") String fileName,
                                               @ApiParam("文件描述") @RequestParam("fileDesc") String fileDesc,
-                                              @ApiParam(name = "file") @RequestPart("file") MultipartFile file) {
+                                              @ApiParam(name = "file") @RequestPart("file") MultipartFile file) throws IOException {
         // 处理上传逻辑
         log.info("文件大小为:{}",file.getSize());
+
+        //如果是上传CSV文件的话,改行代码直接获取csv文件内容,并数据之间用逗号分隔
+        String fileContent = new BufferedReader(new InputStreamReader(file.getInputStream())).lines()
+                .collect(Collectors.joining(System.lineSeparator())).replaceAll("\n", ",");
+
+        log.info("文件内容:{}",fileContent);
         return buildSuccesResp(file.getSize());
     }
 

@@ -1,7 +1,7 @@
 #设置项目名
 server:
   servlet:
-    context-path: /nacos-provider   #设置应用访问url的名字
+    context-path: /nacos-provider2   #设置应用访问url的名字
   port: 28084
 
 nacosServerHost: 212.64.18.166

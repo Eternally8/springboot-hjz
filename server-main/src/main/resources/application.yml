@@ -1,28 +1,30 @@
 
 spring:
-  application:
-    name: dubbo-nacos-provider
-
-server:
-  port: 8081
-
-nacos:
-  server-address: 212.64.18.166
-  port: 30000
-  username: nacos
-  password: nacoshjz66.9
+  profiles:
+    active: yun
 
 
-demo.service.version: 2.0.1
-dubbo:
-  application:
-    name: ${spring.application.name}
-  scan:
-    base-packages: com.hjz.service
-  protocol:
-    name: dubbo
-    port: -1
-  registry:
-    address: nacos://${nacos.server-address}:${nacos.port}/?username=${nacos.username}&password=${nacos.password}
 
+#server:
+#  port: 8081
 
+#nacos:
+#  server-address: 212.64.18.166
+#  port: 30000
+#  username: nacos
+#  password: nacoshjz66.9
+#
+#
+#demo.service.version: 2.0.1
+#dubbo:
+#  application:
+#    name: ${spring.application.name}
+#  scan:
+#    base-packages: com.hjz.service
+#  protocol:
+#    name: dubbo
+#    port: -1
+#  registry:
+#    address: nacos://${nacos.server-address}:${nacos.port}/?username=${nacos.username}&password=${nacos.password}
+#
+#

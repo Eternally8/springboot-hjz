@@ -2,7 +2,7 @@
 #设置项目名
 server:
   servlet:
-    context-path: /springBootDemo
+    context-path: /springBootHJZ
   port: 28081
 
 #外部环境地址(腾讯云服务器地址)
@@ -12,17 +12,22 @@ extraEnvHost: 212.64.18.166
 redisSwitch: true
 swaggerSwitch: true
 
+#自定义的starter
+#link:
+#  name: aaaaaa
+#  msg: bbbbbbbb
+
 
 #===============apollo===================
-app:
-  id: 123456789
-apollo:
-  meta: http://${extraEnvHost}:8080
-  bootstrap:
-    namespaces: application
-    enabled: true
-    eagerLoad:
-      enabled: false
+#app:
+#  id: 123456789
+#apollo:
+#  meta: http://${extraEnvHost}:8080
+#  bootstrap:
+#    namespaces: application
+#    enabled: true
+#    eagerLoad:
+#      enabled: false
 
 testApolloValue: 123
 
@@ -62,51 +67,51 @@ mybatis:
     mapUnderscoreToCamelCase: true
 
 #===================================================微服务的配置=================================================================
-eureka:
-  client:
-    service-url: # EurekaServer地址
-      defaultZone: http://${extraEnvHost}:30001/eureka
-  instance:
-    prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
-#    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
-
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000 # 连接超时时间
-        readTimeout: 5000   # 读超时时间
-        loggerLevel: headers # 日志级别(none:没有日志（默认);basic:请求和相应的状态码时间;headers:基于basic加上请求和响应头;请求和响应的 head ,body 和元数据)
-#也可以增加一个安全的认证来去做实现服务认证
-
-nacos:
-  config:
-    server-addr: ${extraEnvHost}:30000
-  discovery:
-    auto-register: true  #最起码新版本中这个默认设置是false
-    server-addr: ${extraEnvHost}:30000
+#eureka:
+#  client:
+#    service-url: # EurekaServer地址
+#      defaultZone: http://${extraEnvHost}:30001/eureka
+#  instance:
+#    prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
+##    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
+#
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 5000 # 连接超时时间
+#        readTimeout: 5000   # 读超时时间
+#        loggerLevel: headers # 日志级别(none:没有日志（默认);basic:请求和相应的状态码时间;headers:基于basic加上请求和响应头;请求和响应的 head ,body 和元数据)
+##也可以增加一个安全的认证来去做实现服务认证
+#
+#nacos:
+#  config:
+#    server-addr: ${extraEnvHost}:30000
+#  discovery:
+#    auto-register: true  #最起码新版本中这个默认设置是false
+#    server-addr: ${extraEnvHost}:30000
 
 
 
 #===============xxl-job定时任务===================
-xxl:
-  job:
-    admin:
-      addresses: http://${extraEnvHost}:18089/xxl-job-admin
-    executor:
-      ip: ${extraEnvHost}
-      port: 19997
-      logpath: /data/applogs/xxl-job/jobhandler
-      appname: mysp
-    accessToken:
+#xxl:
+#  job:
+#    admin:
+#      addresses: http://${extraEnvHost}:18089/xxl-job-admin
+#    executor:
+#      ip: ${extraEnvHost}
+#      port: 19997
+#      logpath: /data/applogs/xxl-job/jobhandler
+#      appname: mysp
+#    accessToken:
 
 
 #============== Elasticsearch ===================
-elasticsearch.user: hjz_elastic
-elasticsearch.password: hjz_elasticmima
-elasticsearch.host: ${extraEnvHost}
-elasticsearch.port: 9200
-elasticsearch.keystorePath: /Users/jingzhenghu/Downloads/ca.crt
+#elasticsearch.user: hjz_elastic
+#elasticsearch.password: hjz_elasticmima
+#elasticsearch.host: ${extraEnvHost}
+#elasticsearch.port: 9200
+#elasticsearch.keystorePath: /Users/jingzhenghu/Downloads/ca.crt
 
 
 logging:

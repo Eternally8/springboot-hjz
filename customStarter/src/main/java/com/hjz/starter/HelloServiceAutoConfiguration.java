@@ -2,6 +2,7 @@ package com.hjz.starter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,17 +14,19 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(HelloProperties.class) // 让配置类生效
-@ConditionalOnClass(HelloService.class) // 前置配置
+@ConditionalOnClass(HelloServiceAutoConfiguration.class) // 前置配置
 public class HelloServiceAutoConfiguration {
 
     @Autowired
     HelloProperties helloProperties;
 
     @Bean
-    HelloService helloService() {
+    @ConditionalOnMissingBean({HelloService.class})
+    public HelloService helloService() {
         HelloService helloService = new HelloService();
         helloService.setName(helloProperties.getName());
         helloService.setMsg(helloProperties.getMsg());
+        System.out.println("创建了HelloService");
         return helloService;
     }
 

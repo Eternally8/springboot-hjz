@@ -1,0 +1,169 @@
+
+#设置项目名
+server:
+  servlet:
+    context-path: /springBootDemo
+  port: 28081
+
+#外部环境地址(腾讯云服务器地址)
+extraEnvHost: 212.64.18.166
+
+
+redisSwitch: true
+swaggerSwitch: true
+
+
+#===============apollo===================
+app:
+  id: 123456789
+apollo:
+  meta: http://${extraEnvHost}:8080
+  bootstrap:
+    namespaces: application
+    enabled: true
+    eagerLoad:
+      enabled: false
+
+testApolloValue: 123
+
+
+spring:
+  application:
+    name: server-main
+  #===============数据库=================
+  #spring-boot中对于@RestController或者@Controller+@ResponseBody注解的接口方法的返回值默认是Json格式，
+  #对于date类型的数据，在返回浏览器端是会被spring-boot默认的Jackson框架转换，而Jackson框架默认的时区GMT（相对于中国是少了8小时）
+  jackson:
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://${extraEnvHost}:3306/springBootDemo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: root
+    password: JZh2019@nodejsjava
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  #===============redis==================
+  redis:
+    database: 0
+    host: ${extraEnvHost}
+    password: robbenredis009
+    port: 6379
+#  jedis:
+#    pool:
+#      max-active: 8
+#      max-wait: -1ms
+#      max-idle: 8
+#      min-idle: 0
+
+mybatis:
+  configuration:
+    #自动转驼峰
+    mapUnderscoreToCamelCase: true
+
+#===================================================微服务的配置=================================================================
+eureka:
+  client:
+    service-url: # EurekaServer地址
+      defaultZone: http://${extraEnvHost}:30001/eureka
+  instance:
+    prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
+#    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000 # 连接超时时间
+        readTimeout: 5000   # 读超时时间
+        loggerLevel: headers # 日志级别(none:没有日志（默认);basic:请求和相应的状态码时间;headers:基于basic加上请求和响应头;请求和响应的 head ,body 和元数据)
+#也可以增加一个安全的认证来去做实现服务认证
+
+nacos:
+  config:
+    server-addr: ${extraEnvHost}:30000
+  discovery:
+    auto-register: true  #最起码新版本中这个默认设置是false
+    server-addr: ${extraEnvHost}:30000
+
+
+
+#===============xxl-job定时任务===================
+xxl:
+  job:
+    admin:
+      addresses: http://${extraEnvHost}:18089/xxl-job-admin
+    executor:
+      ip: ${extraEnvHost}
+      port: 19997
+      logpath: /data/applogs/xxl-job/jobhandler
+      appname: mysp
+    accessToken:
+
+
+#============== Elasticsearch ===================
+elasticsearch.user: hjz_elastic
+elasticsearch.password: hjz_elasticmima
+elasticsearch.host: ${extraEnvHost}
+elasticsearch.port: 9200
+elasticsearch.keystorePath: /Users/jingzhenghu/Downloads/ca.crt
+
+
+logging:
+  level:
+    #feign日志以什么级别监控那个接口
+    com.hjz.service.otherServer.Server2FeignClient2: debug
+
+
+
+#===============kafka=================
+#  kafka:
+#    #生产者配置，参见org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer
+#    producer:
+#      bootstrapServers: ***:9091
+#      # 每次批量发送消息的数量
+#      batch-size: 16384
+#      buffer-memory: 33554432
+#      # 指定消息key和消息体的编解码方式(构造器默认即是下面这个)
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      security:
+#        protocol: SSL
+#
+#    #消费者配置，参见org.springframework.boot.autoconfigure.kafka.KafkaProperties.Consumer
+#    consumer:
+#      bootstrapServers: ***:9091
+#      groupId: kafka-test
+#      autoOffsetReset: latest
+#      enableAutoCommit: true
+#      security:
+#        protocol: SSL
+#    ssl:
+#      key-store-location: /kafka.client.keystore.jks
+#      key-store-password: ***
+#      key-password: ***
+#      trust-store-location: /kafka.client.truststore.jks
+#      trust-store-password: ***
+#      trust-store-type: JKS
+
+
+#=============热部署=================
+#  devtools:
+#    restart:
+#      enabled: true
+
+#=============rabbitmq===============
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#    publisher-confirms: true  #消息发送到交换机确认机制,是否确认回调(默认是false)
+#    publisher-returns: true   #消息发送到交换机确认机制,是否返回回调(默认是false)
+#    listener:
+#      simple:
+#        acknowledge-mode: manual  #采用手动应答
+#        concurrency: 1     #指定最小的消费者数量
+#        max-concurrency: 1 #指定最大的消费者数量
+#        retry:
+#          enabled: true    #是否支持重试

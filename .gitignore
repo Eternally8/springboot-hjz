@@ -24,6 +24,6 @@ hs_err_pid*
 
 *.target
 *.idea
-*.yml
-*.iml
-*.properties
+#*.yml
+#*.iml
+#*.properties

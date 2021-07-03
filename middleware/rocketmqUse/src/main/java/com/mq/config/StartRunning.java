@@ -27,13 +27,9 @@ public class StartRunning implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String msgStr = "hello hahahahhaha";
+        rocketMQTemplate.convertAndSend("topic3", new UserVo("hjz",18));
 
-        rocketMQTemplate.convertAndSend("topic1", msgStr);
-        rocketMQTemplate.convertAndSend("topic1", new UserVo("hjz",18));
-
-
-        System.out.println("sendMsg~~~~~123~");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~发送消息完毕~~~~~~~~~~~~~~~~~~~~");
     }
 
 }

@@ -15,7 +15,6 @@
         <module>springCloud</module>
         <module>middleware</module>
         <module>customStarter</module>
-        <module>middleware/rocketMqUse</module>
     </modules>
 
     <!--SpringBoot的父依赖启动 -->

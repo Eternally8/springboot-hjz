@@ -18,6 +18,7 @@
         <module>codeGenerate</module>
         <module>esUse</module>
         <module>kafkaUse</module>
+        <module>rocketMqUse</module>
     </modules>
 
     <properties>

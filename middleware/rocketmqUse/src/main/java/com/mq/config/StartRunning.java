@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * Description：
  * 如果发送不了,注意云机器的防火墙和安全组、conf/broker.conf 是否设置了brokerIP1=xxx.xxx.xxx.xxx（服务器公网地址）
+ * 启动注意修改rocket runserver.sh和runbroker的jvm参数
  * namesrv启动方式：
  *  nohup sh bin/mqnamesrv &
  * broker启动方式：
@@ -29,7 +30,8 @@ public class StartRunning implements CommandLineRunner {
         rocketMQTemplate.convertAndSend("topic1", msgStr);
         rocketMQTemplate.convertAndSend("topic1", new UserVo("hjz",18));
 
-        System.out.println("sendMsg~~~~~~");
+
+        System.out.println("sendMsg~~~~~123~");
     }
 
 }

@@ -8,7 +8,8 @@ import com.jayway.jsonpath.ReadContext;
 import org.springframework.context.annotation.Bean;
 
 /**
- * Description： TODO
+ * Description： 用来判断json中是否包含某个值,以前是抛异常现在是返回null
+ * 见测试类
  * Author: hujingzheng
  * Date: 2021/4/7 16:02
  */

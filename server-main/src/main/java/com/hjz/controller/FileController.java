@@ -7,7 +7,10 @@ import com.hjz.utils.reqResult.ResponseEntityDto;
 import com.hjz.utils.reqResult.UnifiedReply;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +37,20 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/file")
 public class FileController extends UnifiedReply {
+
+
+    @Value("classpath:ak.json")
+    private Resource ak;
+
+
+    @ApiOperation(value = "aaaa")
+    @GetMapping ("aaaa")
+    public String hello2() throws Exception {
+        String areaData =  IOUtils.toString(ak.getInputStream(), String.valueOf(Charset.forName("UTF-8")));
+        return areaData;
+    }
+
+
 
     @ApiOperation(value = "上传文件", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PostMapping

@@ -17,9 +17,7 @@
         <module>xxlJobUse</module>
         <module>codeGenerate</module>
         <module>esUse</module>
-        <module>rabbitmqUse</module>
         <module>kafkaUse</module>
-        <module>rocketmqUse</module>
     </modules>
 
     <properties>

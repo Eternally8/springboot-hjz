@@ -1,10 +1,21 @@
 package com.mq.config;
 
+import cn.hutool.core.date.SystemClock;
 import com.mq.entity.UserVo;
+import com.sun.org.apache.bcel.internal.generic.NEW;
+import org.apache.rocketmq.client.producer.SendCallback;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
+
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Description：
@@ -24,10 +35,49 @@ public class StartRunning implements CommandLineRunner {
 
     @Autowired
     private RocketMQTemplate rocketMQTemplate;
+    
 
     @Override
     public void run(String... args) throws Exception {
-        rocketMQTemplate.convertAndSend("topic3", new UserVo("hjz",18));
+        long time = SystemClock.now()/1000;
+
+        UserVo userVo = new UserVo("hjz" + time, 18);
+
+//        //普通发送
+//        rocketMQTemplate.convertAndSend(RocketMqContants.Topic, userVo);
+//
+//        //发送同步消息
+//        SendResult sendResult = rocketMQTemplate.syncSend(RocketMqContants.Topic, userVo);
+//
+//        //异步发送消息-100秒
+//        rocketMQTemplate.asyncSend(RocketMqContants.Topic, userVo, new SendCallback() {
+//            @Override
+//            public void onSuccess(SendResult sendResult) {
+//                System.out.println("异步发送成功" + userVo);
+//            }
+//
+//            @Override
+//            public void onException(Throwable throwable) {
+//                System.out.println("异步发送失败"+ userVo);
+//            }
+//        },100*1000);
+//
+//        //单向消息--不用回执(日志类)
+//        rocketMQTemplate.sendOneWay(RocketMqContants.Topic,userVo);
+//
+//        /**
+//         * 参考文档: https://www.cnblogs.com/starcrm/p/13061971.html
+//         * private String messageDelayLevel = "1s 5s 10s 30s 1m 2m 3m 4m 5m 6m 7m 8m 9m 10m 20m 30m 1h 2h";
+//         * 延时消息(指定等级)
+//         */
+//        rocketMQTemplate.syncSend(RocketMqContants.Topic, MessageBuilder.withPayload(userVo).build(),2000,2);
+
+        //批量消息
+        List<UserVo> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            list.add(userVo);
+        }
+        rocketMQTemplate.syncSend("topic13",list);
 
         System.out.println("~~~~~~~~~~~~~~~~~~~~~发送消息完毕~~~~~~~~~~~~~~~~~~~~");
     }

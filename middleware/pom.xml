@@ -12,6 +12,7 @@
 
     <artifactId>middleware</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>apolloUse</module>
         <module>xxlJobUse</module>

@@ -2,6 +2,7 @@ package com.mq.consumer;
 
 import com.mq.config.RocketMqContants;
 import com.mq.entity.UserVo;
+import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.spring.annotation.MessageModel;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.annotation.SelectorType;

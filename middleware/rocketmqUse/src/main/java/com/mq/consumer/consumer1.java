@@ -14,15 +14,15 @@ import org.springframework.stereotype.Service;
  * Author: hujingzheng
  * Date: 2021/7/3 21:46
  */
-@Service
-@RocketMQMessageListener(topic = RocketMqContants.Topic,consumerGroup = RocketMqContants.consumerGroup,
-        selectorType = SelectorType.TAG ,selectorExpression = "*",
-        messageModel = MessageModel.CLUSTERING) //广播模式和集群模式-负载均衡
-public class consumer1 implements RocketMQListener<UserVo> {
-
-    @Override
-    public void onMessage(UserVo userVo) {
-        System.out.println("消费了消息:" + userVo.toString());
-    }
-
-}
+//@Service
+//@RocketMQMessageListener(topic = RocketMqContants.Topic,consumerGroup = RocketMqContants.consumerGroup,
+//        selectorType = SelectorType.TAG ,selectorExpression = "*",
+//        messageModel = MessageModel.CLUSTERING) //广播模式和集群模式-负载均衡
+//public class consumer1 implements RocketMQListener<UserVo> {
+//
+//    @Override
+//    public void onMessage(UserVo userVo) {
+//        System.out.println("消费了消息:" + userVo.toString());
+//    }
+//
+//}

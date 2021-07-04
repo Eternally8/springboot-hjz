@@ -17,8 +17,7 @@ import org.springframework.stereotype.Service;
 @RocketMQMessageListener(topic = RocketMqContants.Topic,consumerGroup = RocketMqContants.consumerGroup,
         selectorType = SelectorType.TAG ,selectorExpression = "*",
         messageModel = MessageModel.CLUSTERING) //广播模式和集群模式-负载均衡
-public class DemoConsumer implements RocketMQListener<UserVo> {
-
+public class consumer1 implements RocketMQListener<UserVo> {
 
     @Override
     public void onMessage(UserVo userVo) {

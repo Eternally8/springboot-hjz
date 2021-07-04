@@ -5,10 +5,12 @@ import com.mq.entity.UserVo;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +32,7 @@ import java.util.List;
  *
  * Date: 2021/7/3 19:46
  */
+@Order(1)
 @Component
 public class StartRunning implements CommandLineRunner {
 
@@ -73,11 +76,13 @@ public class StartRunning implements CommandLineRunner {
 //        rocketMQTemplate.syncSend(RocketMqContants.Topic, MessageBuilder.withPayload(userVo).build(),2000,2);
 
         //批量消息
-        List<UserVo> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            list.add(userVo);
-        }
-        rocketMQTemplate.syncSend("topic13",list);
+        List<Message> list = new ArrayList<>();
+
+        // 构建 Spring Messaging 定义的 Message 消息
+        list.add(MessageBuilder.withPayload(userVo).build());
+        list.add(MessageBuilder.withPayload(userVo).build());
+
+        rocketMQTemplate.syncSend("topic1",list,1000);
 
         System.out.println("~~~~~~~~~~~~~~~~~~~~~发送消息完毕~~~~~~~~~~~~~~~~~~~~");
     }

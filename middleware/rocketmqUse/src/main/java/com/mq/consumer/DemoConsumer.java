@@ -2,14 +2,11 @@ package com.mq.consumer;
 
 import com.mq.config.RocketMqContants;
 import com.mq.entity.UserVo;
-import org.apache.rocketmq.common.message.MessageExt;
+import org.apache.rocketmq.spring.annotation.MessageModel;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
+import org.apache.rocketmq.spring.annotation.SelectorType;
 import org.apache.rocketmq.spring.core.RocketMQListener;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.messaging.Message;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Description： TODO
@@ -17,7 +14,9 @@ import java.util.List;
  * Date: 2021/7/3 21:46
  */
 @Service
-@RocketMQMessageListener(topic = RocketMqContants.Topic,consumerGroup = RocketMqContants.consumerGroup,selectorExpression = "*")
+@RocketMQMessageListener(topic = RocketMqContants.Topic,consumerGroup = RocketMqContants.consumerGroup,
+        selectorType = SelectorType.TAG ,selectorExpression = "*",
+        messageModel = MessageModel.CLUSTERING) //广播模式和集群模式-负载均衡
 public class DemoConsumer implements RocketMQListener<UserVo> {
 
 

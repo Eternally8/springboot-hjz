@@ -14,17 +14,17 @@ import java.util.List;
  * Author: hujingzheng
  * Date: 2021/7/3 21:46
  */
-@Service
-@RocketMQMessageListener(topic = "topic17",consumerGroup = "batchcg3",selectorExpression = "*")
-public class BatchConsumer implements RocketMQListener<UserVo> {
-
-
-    @Override
-    public void onMessage(UserVo list) {
-//        for (Message vo : list) {
-            System.out.println("消费了消息:");
-//        }
-
-    }
-
-}
+//@Service
+//@RocketMQMessageListener(topic = "topic17",consumerGroup = "batchcg3",selectorExpression = "*")
+//public class BatchConsumer implements RocketMQListener<UserVo> {
+//
+//
+//    @Override
+//    public void onMessage(UserVo list) {
+////        for (Message vo : list) {
+//            System.out.println("消费了消息:");
+////        }
+//
+//    }
+//
+//}

@@ -5,7 +5,7 @@
 
     <groupId>com.jz</groupId>
     <!--此处为工程名字,具体的项目名字是在application-dev.yml中配置的,项目名字为springBootDemo 此处为小写大写会报错-->
-    <artifactId>springbootdemo</artifactId>
+    <artifactId>springboot-hjz</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -15,6 +15,7 @@
         <module>springCloud</module>
         <module>middleware</module>
         <module>customStarter</module>
+        <module>leetcode</module>
     </modules>
 
     <!--SpringBoot的父依赖启动 -->

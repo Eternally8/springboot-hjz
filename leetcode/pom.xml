@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>springboot-hjz</artifactId>
         <groupId>com.jz</groupId>
@@ -10,17 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>middleware</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>apolloUse</module>
-        <module>xxlJobUse</module>
-        <module>codeGenerate</module>
-        <module>esUse</module>
-        <module>kafkaUse</module>
-        <module>rocketMqUse</module>
-    </modules>
+    <artifactId>leetcode</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

@@ -31,7 +31,7 @@ public class TransactionListenerImpl implements RocketMQLocalTransactionListener
             // 设置事务状态
             STATE_MAP.put(transId, RocketMQLocalTransactionState.COMMIT);
 
-            //设置异常
+            //设置异常-执行业务逻辑
             int a = 100/0;
 
             // 返回事务状态给生产者

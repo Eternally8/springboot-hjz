@@ -40,7 +40,7 @@ package leetcode.editor.cn;
 // 题目数据保证列表表示的数字不含前导零 
 // 
 // Related Topics 递归 链表 数学 
-// 👍 6429 👎 0
+// 👍 6432 👎 0
 
 public class AddTwoNumbers{
     public static void main(String[] args) {
@@ -61,7 +61,67 @@ public class AddTwoNumbers{
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//        if (l1 == null) {
+//            return l2;
+//        }
+//        if (l2 == null) {
+//            return l1;
+//        }
+//        l2.val = l1.val + l2.val;
+//        if (l2.val >= 10) {
+//            l2.val = l2.val % 10;
+//            if (l2.next != null) {
+//                l2.next.val = l2.next.val + 1;
+//                if (l2.next.val == 10) {
+//                    l2.next = addTwoNumbers(new ListNode(0, null), l2.next);
+//                }
+//            } else {
+//                l2.next = new ListNode(1, null);
+//            }
+//        }
+//        l2.next = addTwoNumbers(l1.next, l2.next);
+//        return l2;
 
+        String a1 = "";
+        while (l1.next != null){
+            a1 = l1.val + a1;
+            l1 = l1.next;
+        }
+        if(l1 != null){
+            a1 = l1.val + a1;
+        }
+        long aa = Long.getLong(a1);
+
+        String b1 = "";
+        while (l2.next != null){
+            b1 = l2.val + b1;
+            l2 = l2.next;
+        }
+        if(l2 != null){
+            b1 = l2.val + b1;
+        }
+        long bb = Long.getLong(b1);
+
+        String cc = aa + bb +"";
+
+        l1.val = cc.charAt(cc.length() - 1) -'0';
+        l1.next = getNext(cc,cc.length() - 1);
+        return l1;
+    }
+
+    public  ListNode getNext(String cc, int i) {
+        ListNode a = new ListNode();
+        int y = i - 1;
+        char j = cc.charAt(y);
+        a.val = j-'0';
+
+        if(y == 0){
+            a.next = null;
+            return a;
+        }else{
+            a.next = getNext(cc,y);
+        }
+        return a;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

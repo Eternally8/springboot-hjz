@@ -16,6 +16,7 @@
         <module>middleware</module>
         <module>customStarter</module>
         <module>leetcode</module>
+        <module>zsf</module>
     </modules>
 
     <!--SpringBoot的父依赖启动 -->

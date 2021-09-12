@@ -1,10 +1,12 @@
+import com.alibaba.fastjson.JSON;
+
 /**
  * 字符串相乘
  */
 public class StrMultiply {
 
     public static void main(String[] args) {
-        System.out.println(multiply("11","22"));
+        System.out.println(multiply("99","22"));
     }
 
     public static String multiply(String num1, String num2) {
@@ -22,21 +24,18 @@ public class StrMultiply {
         for(int i=inx1;i>=0;i--){
             for(int j=inx2;j>=0;j--){
                 int mul = (num1.charAt(i)-'0') * (num2.charAt(j)-'0');
-                mul += muls[i+j+1];
+                mul = mul + muls[i+j+1];
                 muls[i+j+1] = mul%10;
                 muls[i+j] += mul/10;
+                System.out.println(JSON.toJSONString(muls));
             }
         }
 
-        int start = 0;
-        while(start<muls.length&&muls[start]==0){
-            start++;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < muls.length; i++) {
+            result.append(muls[i]);
         }
-        String r = "";
-        while(start<muls.length){
-            r += muls[start++];
-        }
-        return r;
+        return result.toString();
     }
 
 }
